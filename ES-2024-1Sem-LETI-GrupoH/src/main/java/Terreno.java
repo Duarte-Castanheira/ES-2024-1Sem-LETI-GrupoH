@@ -5,7 +5,7 @@ public class Terreno {
     private String PAR_NUM;
     private double Shape_Length;
     private double Shape_Area;
-    private String geometry;
+    private Geometry geometry;
     private int OWNER;
     private String Freguesia;
     private String Municipio;
@@ -15,7 +15,7 @@ public class Terreno {
     }
 
     public Terreno(int OBJECTID, String PAR_ID, String PAR_NUM, double Shape_Length, double Shape_Area,
-                   String geometry, int OWNER, String Freguesia, String Municipio, String Ilha) {
+                   Geometry geometry, int OWNER, String Freguesia, String Municipio, String Ilha) {
         this.OBJECTID = OBJECTID;
         this.PAR_ID = PAR_ID;
         this.PAR_NUM = PAR_NUM;
@@ -69,11 +69,11 @@ public class Terreno {
         this.Shape_Area = shape_Area;
     }
 
-    public String getGeometry() {
+    public Geometry getGeometry() {
         return geometry;
     }
 
-    public void setGeometry(String geometry) {
+    public void setGeometry(Geometry geometry) {
         this.geometry = geometry;
     }
 
