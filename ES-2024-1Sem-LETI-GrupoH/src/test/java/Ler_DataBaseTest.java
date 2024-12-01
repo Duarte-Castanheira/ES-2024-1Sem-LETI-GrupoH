@@ -14,9 +14,9 @@ class Ler_DataBaseTest {
     void setUp() {
         String conteudoTeste = """
                 OBJECTID;PAR_ID;PAR_NUM;Shape_Length;Shape_Area;geometry;OWNER;Freguesia;Municipio;Ilha
-                1;Terreno A;100;200;300;quadrado;1;alcochete;Madeira;Ilha
-                2;Terreno B;200;250;350;triangulo;2;Samouco;Madeira;Ilha
-                3;Terreno C;300;270;370;quadrado;3;Montijo;Madeira;Ilha
+                1;Terreno A;100;200;300;100.0 100.0, 200.0 200.0;1;alcochete;Madeira;Ilha
+                2;Terreno B;200;250;350;800.0 500.0, 500.0 100.0;2;Samouco;Madeira;Ilha
+                3;Terreno C;300;270;370;180.0 101.0, 210.0 500.0;3;Montijo;Madeira;Ilha
                 """;
 
         try (FileWriter writer = new FileWriter("test-temp.csv")) {

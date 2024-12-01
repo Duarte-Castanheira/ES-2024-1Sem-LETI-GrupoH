@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe que lê o ficheiro concluida">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe coordenadas">
+      <change afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Coordenadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Coordenadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Terreno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Terreno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,7 +48,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -55,28 +58,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.Ler_DataBaseTest.ReadFile.executor": "Run",
-    "JUnit.Ler_DataBaseTest.executor": "Run",
-    "Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor": "Run",
-    "Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main__Duarte",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/duart/TicTacToeFX",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GraphTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.GraphTest.testCreateGraph.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.GraphTest.testEmptyGraph.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ler_DataBaseTest.ReadFile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ler_DataBaseTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main__Duarte&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/duart/TicTacToeFX&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -91,10 +97,39 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GraphTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest.testCreateGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="METHOD_NAME" value="testCreateGraph" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest.testEmptyGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="METHOD_NAME" value="testEmptyGraph" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,21 +143,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ler_DataBaseTest.ReadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Ler_DataBaseTest" />
-      <option name="METHOD_NAME" value="ReadFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.Ler_DataBaseTest.ReadFile" />
+        <item itemvalue="JUnit.GraphTest" />
         <item itemvalue="JUnit.Ler_DataBaseTest" />
+        <item itemvalue="JUnit.GraphTest.testCreateGraph" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GraphTest.testEmptyGraph" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +190,13 @@
       <workItem from="1732626580031" duration="4963000" />
       <workItem from="1732638184852" duration="7002000" />
       <workItem from="1732713252863" duration="3367000" />
-      <workItem from="1732800365645" duration="425000" />
+      <workItem from="1732800365645" duration="3828000" />
+      <workItem from="1732818488763" duration="4647000" />
+      <workItem from="1732971493329" duration="18334000" />
+      <workItem from="1732996750733" duration="58000" />
+      <workItem from="1733007927907" duration="1324000" />
+      <workItem from="1733010657285" duration="14000" />
+      <workItem from="1733058984413" duration="3050000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -189,7 +222,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732645270596</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Classe_Graph começada">
+      <option name="closed" value="true" />
+      <created>1732800874719</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732800874719</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Classe coordenadas">
+      <option name="closed" value="true" />
+      <created>1732804131544</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732804131544</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +262,9 @@
     <MESSAGE value="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno" />
     <MESSAGE value="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno. Alguns testes iniciados" />
     <MESSAGE value="Classe que lê o ficheiro concluida" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe que lê o ficheiro concluida" />
+    <MESSAGE value="Classe_Graph começada" />
+    <MESSAGE value="Classe coordenadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classe coordenadas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -236,6 +287,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Ler_DataBaseTest.ic" NAME="Ler_DataBaseTest Coverage Results" MODIFIED="1733010292521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Main.ic" NAME="Main Coverage Results" MODIFIED="1732628762609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest_testCreateGraph.ic" NAME="GraphTest.testCreateGraph Coverage Results" MODIFIED="1732990490706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1733010304001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
