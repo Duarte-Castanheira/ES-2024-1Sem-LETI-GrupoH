@@ -13,7 +13,6 @@ import java.util.List;
 
 
 public class Ler_DataBase {
-
     public static void ReadFile(String caminhoArquivo ) {
 
         List<Terreno> ListaTerrenos = new ArrayList<>();
@@ -21,15 +20,15 @@ public class Ler_DataBase {
             String[] linha;
             while ((linha = reader.readNext()) != null) {
                 String[] terreno = new String[linha.length];
-                 for (int i = 0; i < linha.length; i++) {
-                     String s = String.join(",", linha);
-                     terreno = s.split(";");
-                     ListaTerrenos.add(new Terreno(Integer.parseInt(terreno[0]),terreno[1],terreno[2],
-                         Double.parseDouble(terreno[3]),Double.parseDouble(terreno[4]),terreno[5],
-                         Integer.parseInt(terreno[6]),terreno[7],terreno[8],terreno[9]));
-                 }
+                for (int i = 0; i < linha.length; i++) {
+                    String s = String.join(",", linha);
+                    terreno = s.split(";");
+                    ListaTerrenos.add(new Terreno(Integer.parseInt(terreno[0]),terreno[1],terreno[2],
+                            Double.parseDouble(terreno[3]),Double.parseDouble(terreno[4]),terreno[5],
+                            Integer.parseInt(terreno[6]),terreno[7],terreno[8],terreno[9]));
+                }
             }
-        ListaTerrenos.forEach(System.out::println);
+            ListaTerrenos.forEach(System.out::println);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,6 +49,5 @@ public class Ler_DataBase {
             throw new RuntimeException(e);
         }
     }
-
 
 }
