@@ -1,4 +1,5 @@
 import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.jgrapht.graph.Pseudograph;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,29 +45,32 @@ class GraphTest {
         Graph.CreateGraph(terrenos);
 
         // Obtém o grafo gerado
-        Map<Integer, Set<Integer>> grafo = Graph.getGrafo();
+        DefaultUndirectedGraph<Integer, DefaultEdge> grafo = Graph.getGrafo();
 
         // Verificações
         assertNotNull(grafo); // Certifica-se de que o grafo não seja nulo
 
-        assertEquals(2, grafo.size());
-        assertEquals(Set.of(2), grafo.get(1)); // Terreno 1 conecta ao terreno 2
-        assertEquals(Set.of(1), grafo.get(2)); // Terreno 2 conecta ao terreno 1
+        assertEquals(2, grafo.vertexSet().size());
+        Set<Integer> vizinhosTerreno1 = new HashSet<>();
+        for (DefaultEdge edge : grafo.edgesOf(1)) {
+            vizinhosTerreno1.add(grafo.getEdgeSource(edge) == 1 ? grafo.getEdgeTarget(edge) : grafo.getEdgeSource(edge));
+        }
+        assertEquals(Set.of(2), vizinhosTerreno1);
     }
 
     @Test
     public void testEmptyGraph() {
 
-        Map<Integer, Set<Integer>> grafo = Graph.getGrafo();
+        DefaultUndirectedGraph<Integer, DefaultEdge> grafo = Graph.getGrafo();
         assertNotNull(grafo);
-        assertEquals(true, grafo.entrySet().isEmpty());
+        assertEquals(true, grafo.vertexSet().isEmpty());
     }
 
     @Test
     public void testgenerateGraph() {
 
         Graph.CreateGraph(terrenos);
-        Map<Integer, Set<Integer>> grafo = Graph.getGrafo();
+        DefaultUndirectedGraph<Integer, DefaultEdge> grafo = Graph.getGrafo();
         assertNotNull(grafo);
 
         try {
