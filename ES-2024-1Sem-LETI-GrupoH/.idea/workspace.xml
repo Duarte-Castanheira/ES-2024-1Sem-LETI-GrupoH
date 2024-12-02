@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Removida a classe Geometry e adicionada dependencia para os multipolygons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Geometry.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Terreno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Terreno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,36 +55,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in ES-2024-1Sem-LETI-GrupoH.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Area_MediaTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.Area_Media_ProprietarioTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.GraphTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GraphTest.testCreateGraph.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GraphTest.testEmptyGraph.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GraphTest.testgenerateGraph.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Ler_DataBaseTest.ReadFile.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Ler_DataBaseTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.TerrenoTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main__Duarte&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/duart/TicTacToeFX&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.All in ES-2024-1Sem-LETI-GrupoH.executor": "Run",
+    "JUnit.Area_MediaTest.executor": "Coverage",
+    "JUnit.Area_Media_ProprietarioTest.executor": "Coverage",
+    "JUnit.GraphTest.executor": "Run",
+    "JUnit.GraphTest.testCreateGraph.executor": "Run",
+    "JUnit.GraphTest.testEmptyGraph.executor": "Run",
+    "JUnit.GraphTest.testgenerateGraph.executor": "Run",
+    "JUnit.Ler_DataBaseTest.ReadFile.executor": "Run",
+    "JUnit.Ler_DataBaseTest.executor": "Run",
+    "JUnit.TerrenoTest.executor": "Coverage",
+    "Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor": "Run",
+    "Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main__Duarte",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/duart/TicTacToeFX",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -106,7 +99,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GraphTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ES-2024-1Sem-LETI-GrupoH" />
@@ -143,23 +136,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest.testgenerateGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Ler_DataBaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest" />
-      <option name="METHOD_NAME" value="testgenerateGraph" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="Ler_DataBaseTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GraphTest" />
-        <item itemvalue="JUnit.GraphTest.testgenerateGraph" />
-        <item itemvalue="JUnit.GraphTest.testCreateGraph" />
         <item itemvalue="JUnit.GraphTest.testEmptyGraph" />
+        <item itemvalue="JUnit.GraphTest.testCreateGraph" />
+        <item itemvalue="JUnit.Ler_DataBaseTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +201,8 @@
       <workItem from="1733058984413" duration="6816000" />
       <workItem from="1733076297778" duration="447000" />
       <workItem from="1733082955106" duration="12702000" />
-      <workItem from="1733155177721" duration="1094000" />
+      <workItem from="1733155177721" duration="4225000" />
+      <workItem from="1733161082565" duration="5848000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -259,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733069520279</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removida a classe Geometry e adicionada dependencia para os multipolygons">
+      <option name="closed" value="true" />
+      <created>1733156435162</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733156435162</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +287,8 @@
     <MESSAGE value="Classe_Graph começada" />
     <MESSAGE value="Classe coordenadas" />
     <MESSAGE value="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste" />
+    <MESSAGE value="Removida a classe Geometry e adicionada dependencia para os multipolygons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removida a classe Geometry e adicionada dependencia para os multipolygons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

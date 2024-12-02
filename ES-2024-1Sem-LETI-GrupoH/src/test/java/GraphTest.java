@@ -6,17 +6,16 @@ import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GraphTest {
-    private List<Terreno> terrenos;
+    private Map<Integer,Terreno> terrenos;
 
     @BeforeEach
     void setUp() {
-        terrenos = new ArrayList<>();
+        terrenos = new HashMap<>();
 
         WKTReader reader = new WKTReader();
         MultiPolygon g1;
@@ -30,8 +29,8 @@ class GraphTest {
         Terreno terreno1 = new Terreno(1,"7343148.0","2,99624E+12",57.2469341921808,202.05981432070362, g1,93,"Arco da Calheta","Calheta", "Ilha da Madeira (Madeira)");
         Terreno terreno2 = new Terreno(2,"7344660.0", "2,99622E+12",55.63800662596267, 151.76387471712783, g2, 68, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
 
-        terrenos.add(terreno1);
-        terrenos.add(terreno2);
+        terrenos.put(terreno1.getOBJECTID(),terreno1);
+        terrenos.put(terreno2.getOBJECTID(),terreno2);
 
         //System.out.println(terreno1.getGeometry().Arestas.getFirst().toString());
         //System.out.println(terreno2.getGeometry().Arestas.getFirst().toString());
@@ -40,28 +39,34 @@ class GraphTest {
 
     @Test
     public void testCreateGraph() {
-        Graph.CreateGraph(terrenos);
-        Pseudograph<Integer, DefaultEdge> grafo = Graph.getGrafo();
 
-        assertNotNull(grafo);
-        assertEquals(2, grafo.vertexSet().size());
-        assertEquals(1, grafo.edgeSet().size());
+        // Cria o grafo usando o método adaptado
+        Graph.CreateGraph(terrenos);
+
+        // Obtém o grafo gerado
+        Map<Integer, Set<Integer>> grafo = Graph.getGrafo();
+
+        // Verificações
+        assertNotNull(grafo); // Certifica-se de que o grafo não seja nulo
+
+        assertEquals(2, grafo.size());
+        assertEquals(Set.of(2), grafo.get(1)); // Terreno 1 conecta ao terreno 2
+        assertEquals(Set.of(1), grafo.get(2)); // Terreno 2 conecta ao terreno 1
     }
 
     @Test
     public void testEmptyGraph() {
-        Graph.CreateGraph(new ArrayList<>());
 
-        Pseudograph<Integer, DefaultEdge> grafo = Graph.getGrafo();
+        Map<Integer, Set<Integer>> grafo = Graph.getGrafo();
         assertNotNull(grafo);
-        assertTrue(grafo.vertexSet().isEmpty());
+        assertEquals(true, grafo.entrySet().isEmpty());
     }
 
     @Test
     public void testgenerateGraph() {
 
         Graph.CreateGraph(terrenos);
-        Pseudograph<Integer, DefaultEdge> grafo = Graph.getGrafo();
+        Map<Integer, Set<Integer>> grafo = Graph.getGrafo();
         assertNotNull(grafo);
 
         try {
