@@ -1,6 +1,7 @@
 import com.opencsv.CSVReaderHeaderAware;
 import com.opencsv.exceptions.CsvValidationException;
-
+import org.locationtech.jts.geom.MultiPolygon;
+import org.locationtech.jts.io.WKTReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,10 +20,9 @@ public class Ler_DataBase {
                  for (int i = 0; i < linha.length; i++) {
                      String s = String.join(",", linha);
                      terreno = s.split(";");
-                     Geometry g = new Geometry();
-                     g.GetArestas(terreno[5]);
+                    MultiPolygon g = CreateGeometry(terreno[5]);
                      ListaTerrenos.add(new Terreno(Integer.parseInt(terreno[0]),terreno[1],terreno[2],
-                         Double.parseDouble(terreno[3]),Double.parseDouble(terreno[4]),g,
+                         Double.parseDouble(terreno[3]),Double.parseDouble(terreno[4]),CreateGeometry(terreno[5]),
                          Integer.parseInt(terreno[6]),terreno[7],terreno[8],terreno[9]));
                  }
             }
@@ -30,24 +30,24 @@ public class Ler_DataBase {
 
         } catch (IOException e) {
             e.printStackTrace();
-        /*
-       try {
-            CSVReader leitor = new CSVReader(new FileReader(caminhoArquivo));
-            CsvToBean<Terreno> csvToBean = new CsvToBeanBuilder<Terreno>(leitor)
-                    .withType(Terreno.class)
-                    .withIgnoreLeadingWhiteSpace(true)
-                    .withSeparator(';')
-                    .build();
-            //leitor.forEach(System.out::println);
-            List<Terreno> ListaTerrenos = csvToBean.parse();
-            System.out.println(csvToBean.toString());
-            //System.out.println(ListaTerrenos.get(1).getFreguesia());
-            */
+
         } catch (CsvValidationException e) {
             throw new RuntimeException(e);
         }
 
         return ListaTerrenos;
+    }
+
+    private static MultiPolygon CreateGeometry(String s) {
+        try {
+            WKTReader reader = new WKTReader();
+
+            return (MultiPolygon) reader.read(s);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

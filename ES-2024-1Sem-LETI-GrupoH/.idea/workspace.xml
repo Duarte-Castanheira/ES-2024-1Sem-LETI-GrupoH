@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe coordenadas">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Coordenadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Coordenadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Geometry.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Terreno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Terreno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +65,16 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GraphTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.GraphTest.testCreateGraph.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.All in ES-2024-1Sem-LETI-GrupoH.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Area_MediaTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.Area_Media_ProprietarioTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.GraphTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GraphTest.testCreateGraph.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.GraphTest.testEmptyGraph.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GraphTest.testgenerateGraph.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Ler_DataBaseTest.ReadFile.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Ler_DataBaseTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.TerrenoTest.executor&quot;: &quot;Coverage&quot;,
     &quot;Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -97,7 +106,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ES-2024-1Sem-LETI-GrupoH" />
@@ -134,21 +143,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ler_DataBaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphTest.testgenerateGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Ler_DataBaseTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="METHOD_NAME" value="testgenerateGraph" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphTest" />
-        <item itemvalue="JUnit.Ler_DataBaseTest" />
-        <item itemvalue="JUnit.GraphTest.testCreateGraph" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GraphTest" />
+        <item itemvalue="JUnit.GraphTest.testgenerateGraph" />
+        <item itemvalue="JUnit.GraphTest.testCreateGraph" />
         <item itemvalue="JUnit.GraphTest.testEmptyGraph" />
       </list>
     </recent_temporary>
@@ -196,7 +206,10 @@
       <workItem from="1732996750733" duration="58000" />
       <workItem from="1733007927907" duration="1324000" />
       <workItem from="1733010657285" duration="14000" />
-      <workItem from="1733058984413" duration="3050000" />
+      <workItem from="1733058984413" duration="6816000" />
+      <workItem from="1733076297778" duration="447000" />
+      <workItem from="1733082955106" duration="12702000" />
+      <workItem from="1733155177721" duration="1094000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -238,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732804131544</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste">
+      <option name="closed" value="true" />
+      <created>1733069520279</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733069520279</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +285,8 @@
     <MESSAGE value="Classe que lê o ficheiro concluida" />
     <MESSAGE value="Classe_Graph começada" />
     <MESSAGE value="Classe coordenadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe coordenadas" />
+    <MESSAGE value="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -287,9 +309,12 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Ler_DataBaseTest.ic" NAME="Ler_DataBaseTest Coverage Results" MODIFIED="1733010292521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_MediaTest.ic" NAME="Area_MediaTest Coverage Results" MODIFIED="1733070004390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TerrenoTest.ic" NAME="TerrenoTest Coverage Results" MODIFIED="1733069989037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Ler_DataBaseTest.ic" NAME="Ler_DataBaseTest Coverage Results" MODIFIED="1733070063427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Main.ic" NAME="Main Coverage Results" MODIFIED="1732628762609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest_testCreateGraph.ic" NAME="GraphTest.testCreateGraph Coverage Results" MODIFIED="1732990490706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1733010304001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_Media_ProprietarioTest.ic" NAME="Area_Media_ProprietarioTest Coverage Results" MODIFIED="1733070018036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1733070041921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
