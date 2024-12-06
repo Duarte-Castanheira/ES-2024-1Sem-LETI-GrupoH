@@ -9,85 +9,80 @@ import javax.swing.*;
 import java.util.*;
 
 /**
- * Classe responsável por criar, manipular e visualizar um grafo utilizando JGraphT e JGraphX.
+ * Classe para construção, análise e visualização de grafos de terrenos.
  */
-
 public class Graph {
+
     private static DefaultUndirectedGraph<Integer, DefaultEdge> grafo = new DefaultUndirectedGraph<>(DefaultEdge.class);
 
     /**
      * Retorna o grafo atual.
+     *
+     * @return Grafo não direcionado contendo os vértices (terrenos) e arestas (relações de vizinhança).
      */
-
     public static DefaultUndirectedGraph<Integer, DefaultEdge> getGrafo() {
         return grafo;
     }
 
     /**
-     * Cria o grafo a partir de um mapa de terrenos.
+     * Cria o grafo com base no mapa de terrenos fornecido.
      *
-     * @param mapaTerreno Mapa contendo os terrenos identificados por IDs.
+     * @param mapaTerreno Mapa que contém os terrenos (ID como chave, objeto `Terreno` como valor).
      */
-
-    public static void CreateGraph(Map<Integer,Terreno> mapaTerreno) {
-
-        grafo = new DefaultUndirectedGraph<Integer,DefaultEdge>(DefaultEdge.class);
+    public static void CreateGraph(Map<Integer, Terreno> mapaTerreno) {
+        grafo = new DefaultUndirectedGraph<>(DefaultEdge.class);
 
         for (Map.Entry<Integer, Terreno> entry : mapaTerreno.entrySet()) {
             Integer id = entry.getKey();
-            Terreno t = entry.getValue();
-
-            if (t.getOBJECTID() == 600)
-                break;
-            System.out.println(id);
-            grafo.addVertex(id);
+            grafo.addVertex(id); // Adiciona o ID do terreno como vértice.
+            System.out.println(id); // Log para depuração.
         }
+
         checkNeighbor(mapaTerreno);
 
         generateGraph();
     }
 
     /**
-     * Verifica quais terrenos são vizinhos e adiciona arestas entre eles no grafo.
+     * Verifica a vizinhança entre todos os terrenos e adiciona arestas ao grafo.
      *
-     * @param mapaTerreno Mapa contendo os terrenos identificados por IDs.
+     * @param mapaTerreno Mapa de terrenos.
      */
-
-    private static void checkNeighbor(Map<Integer,Terreno> mapaTerreno) {
+    private static void checkNeighbor(Map<Integer, Terreno> mapaTerreno) {
         List<Integer> terrenos = new ArrayList<>(grafo.vertexSet());
 
         for (int i = 0; i < terrenos.size(); i++) {
             for (int j = i + 1; j < terrenos.size(); j++) {
                 Terreno t1 = mapaTerreno.get(terrenos.get(i));
                 Terreno t2 = mapaTerreno.get(terrenos.get(j));
+
                 if (isNeighbor(t1, t2)) {
                     grafo.addEdge(t1.getOBJECTID(), t2.getOBJECTID());
-                    System.out.println(t1.getOBJECTID() + "é vizinho de " + t2.getOBJECTID());
+                    System.out.println(t1.getOBJECTID() + " é vizinho de " + t2.getOBJECTID());
                 }
             }
         }
     }
 
     /**
-     * Determina se dois terrenos são vizinhos com base em suas geometrias.
+     * Verifica se dois terrenos são vizinhos (contíguos).
      *
-     * @param t        Terreno 1.
+     * @param t Terreno 1.
      * @param neighbor Terreno 2.
-     * @return true se os terrenos forem vizinhos, false caso contrário.
+     * @return `true` se os terrenos forem vizinhos, `false` caso contrário.
      */
-
     private static boolean isNeighbor(Terreno t, Terreno neighbor) {
         Geometry geomTerreno = t.getGeometry();
-        Geometry bufferedGeomTerreno = geomTerreno.buffer(0.0000000001);
+        Geometry bufferedGeomTerreno = geomTerreno.buffer(0.0000000001); // Buffer para corrigir imprecisões.
         Geometry geomOutroTerreno = neighbor.getGeometry();
         Geometry bufferedGeomOutroTerreno = geomOutroTerreno.buffer(0.0000000001);
+
         return bufferedGeomTerreno.touches(bufferedGeomOutroTerreno) || bufferedGeomTerreno.intersects(bufferedGeomOutroTerreno);
     }
 
     /**
-     * Cria a visualização gráfica do grafo utilizando JGraphX.
+     * Gera a visualização gráfica do grafo utilizando JGraphX.
      */
-
     public static void generateGraph() {
         mxGraph mxGraph = new mxGraph();
         Object parent = mxGraph.getDefaultParent();
@@ -117,8 +112,7 @@ public class Graph {
         JFrame frame = new JFrame("Visualização do Grafo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(graphComponent);
-        frame.setSize(600, 400);
+        frame.setSize(600, 400); // Dimensões da janela.
         frame.setVisible(true);
     }
-
 }

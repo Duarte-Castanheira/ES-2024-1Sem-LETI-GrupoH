@@ -2,31 +2,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Classe responsável por calcular a área média de terrenos filtrados por Freguesia, Município ou Ilha.
+ * Classe para calcular a área média de terrenos com base em critérios como freguesia, município e ilha.
  */
 
 public class Area_Media {
 
-    private final Map<Integer,Terreno> terreno;
+    private static Map<Integer, Terreno> terreno;
 
     /**
-     * Construtor que inicializa a classe com um mapa de terrenos.
+     * Construtor da classe que inicializa o mapa de terrenos.
      *
-     * @param terreno Mapa de terrenos, onde a chave é o ID do terreno e o valor é o objeto Terreno.
+     * @param terreno Mapa de terrenos a ser utilizado para cálculos.
      */
 
-    public Area_Media(Map<Integer,Terreno> terreno) {
+    public Area_Media(Map<Integer, Terreno> terreno) {
         this.terreno = terreno;
     }
 
     /**
-     * Calcula a área média de terrenos pertencentes a uma freguesia específica.
+     * Calcula a área média de terrenos em uma determinada freguesia.
      *
      * @param nome Nome da freguesia.
-     * @return Área média dos terrenos na freguesia ou -1 se nenhum terreno for encontrado.
+     * @return A área média dos terrenos na freguesia, ou -1 se não houver terrenos.
      */
 
-    public double calcularAreaMedia_Freguesia(String nome) {
+    public static double calcularAreaMedia_Freguesia(String nome) {
         Map<Integer, Terreno> terrenos = new HashMap<>();
 
         for (Map.Entry<Integer, Terreno> entry : terreno.entrySet()) {
@@ -35,7 +35,6 @@ public class Area_Media {
                 terrenos.put(currentTerreno.getOBJECTID(), currentTerreno);
             }
         }
-
 
         if (terrenos.isEmpty()) {
             return -1;
@@ -50,13 +49,13 @@ public class Area_Media {
     }
 
     /**
-     * Calcula a área média de terrenos pertencentes a um município específico.
+     * Calcula a área média de terrenos em um determinado município.
      *
      * @param nome Nome do município.
-     * @return Área média dos terrenos no município ou -1 se nenhum terreno for encontrado.
+     * @return A área média dos terrenos no município, ou -1 se não houver terrenos.
      */
 
-    public double calcularAreaMedia_Municipio(String nome) {
+    public static double calcularAreaMedia_Municipio(String nome) {
         Map<Integer, Terreno> terrenos = new HashMap<>();
 
         for (Map.Entry<Integer, Terreno> entry : terreno.entrySet()) {
@@ -79,13 +78,13 @@ public class Area_Media {
     }
 
     /**
-     * Calcula a área média de terrenos pertencentes a uma ilha específica.
+     * Calcula a área média de terrenos em uma determinada ilha.
      *
      * @param nome Nome da ilha.
-     * @return Área média dos terrenos na ilha ou -1 se nenhum terreno for encontrado.
+     * @return A área média dos terrenos na ilha, ou -1 se não houver terrenos.
      */
 
-    public double calcularAreaMedia_Ilha(String nome) {
+    public static double calcularAreaMedia_Ilha(String nome) {
         Map<Integer, Terreno> terrenos = new HashMap<>();
 
         for (Map.Entry<Integer, Terreno> entry : terreno.entrySet()) {

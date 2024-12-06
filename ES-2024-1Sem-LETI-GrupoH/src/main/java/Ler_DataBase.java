@@ -1,60 +1,77 @@
+// Importações necessárias para manipular arquivos CSV, lidar com exceções relacionadas a CSV,
+// e processar geometrias (MultiPolygon) no formato WKT.
 import com.opencsv.CSVReaderHeaderAware;
 import com.opencsv.exceptions.CsvValidationException;
 import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.io.WKTReader;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Classe responsável por ler um arquivo CSV contendo informações de terrenos,
- * processar os dados e retornar um mapa onde cada terreno é associado a um ID único.
+ * Classe principal responsável por ler e processar dados de um arquivo CSV.
  */
-
 public class Ler_DataBase {
 
-
+    /**
+     * Instância única do WKTReader para converter strings WKT em objetos MultiPolygon.
+     */
     private static final WKTReader reader = new WKTReader();
 
     /**
-     * Lê um arquivo CSV, processa as informações e cria um mapa de terrenos.
-     *
-     * @param caminhoArquivo Caminho para o arquivo CSV.
-     * @return Um mapa onde as chaves são IDs dos terrenos (Integer) e os valores são objetos do tipo Terreno.
+     * Método principal para ler e processar um arquivo CSV e retornar um mapa de Terrenos.
+     * @param caminhoArquivo Arquivo CSV que será lido.
+     * @return Um mapa contendo os Terrenos processados, onde a chave é o ID do terreno.
      */
-
-    public static Map<Integer, Terreno> ReadFile(String caminhoArquivo ) {
-
+    public static Map<Integer, Terreno> ReadFile(File caminhoArquivo) {
         Map<Integer, Terreno> mapaTerrenos = new HashMap<>();
-        try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(caminhoArquivo))) {
+        try (
+                CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(caminhoArquivo))
+        ) {
             String[] linha;
             String[] terreno;
+
             while ((linha = reader.readNext()) != null) {
                 String s = String.join(",", linha);
                 terreno = s.split(";");
+
+                if (terreno[7].equalsIgnoreCase("na"))
+                    break;
+
                 int id = Integer.parseInt(terreno[0]);
-                Terreno t = new Terreno(id,terreno[1],terreno[2],
-                        Double.parseDouble(terreno[3]),Double.parseDouble(terreno[4]),CreateGeometry(terreno[5]),
-                        Integer.parseInt(terreno[6]),terreno[7],terreno[8],terreno[9]);
-                mapaTerrenos.put(id,t);
+
+                Terreno t = new Terreno(
+                        id,
+                        terreno[1],
+                        terreno[2],
+                        Double.parseDouble(terreno[3]),
+                        Double.parseDouble(terreno[4]),
+                        CreateGeometry(terreno[5]),
+                        Integer.parseInt(terreno[6]),
+                        terreno[7],
+                        terreno[8],
+                        terreno[9]
+                );
+
+                mapaTerrenos.put(id, t);
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (CsvValidationException e) {
             throw new RuntimeException(e);
         }
+
         return mapaTerrenos;
     }
 
     /**
-     * Converte uma string WKT (Well-Known Text) em um objeto MultiPolygon.
-     *
-     * @param s String contendo a geometria no formato WKT.
-     * @return Objeto MultiPolygon representando a geometria, ou null se ocorrer um erro.
+     * Método auxiliar para criar um objeto MultiPolygon a partir de uma string WKT.
+     * @param s String WKT representando a geometria.
+     * @return Um objeto MultiPolygon ou null em caso de erro.
      */
-
     private static MultiPolygon CreateGeometry(String s) {
         try {
             return (MultiPolygon) reader.read(s);
@@ -63,5 +80,4 @@ public class Ler_DataBase {
         }
         return null;
     }
-
 }
