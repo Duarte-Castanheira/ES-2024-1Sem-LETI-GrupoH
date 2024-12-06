@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Troca de propriedades acabada">
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Projeto quase acabado">
       <change beforePath="$PROJECT_DIR$/src/main/java/Grafo_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grafo_Proprietario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +266,7 @@
       <workItem from="1733399712725" duration="916000" />
       <workItem from="1733400771432" duration="2664000" />
       <workItem from="1733404772800" duration="8064000" />
-      <workItem from="1733481927483" duration="24857000" />
+      <workItem from="1733481927483" duration="25126000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -364,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733508931335</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Projeto quase acabado">
+      <option name="closed" value="true" />
+      <created>1733509009605</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733509009606</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +404,8 @@
     <MESSAGE value="updated project" />
     <MESSAGE value="Updated project" />
     <MESSAGE value="Troca de propriedades acabada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Troca de propriedades acabada" />
+    <MESSAGE value="Projeto quase acabado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projeto quase acabado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

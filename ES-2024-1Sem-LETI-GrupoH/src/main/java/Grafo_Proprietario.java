@@ -32,7 +32,6 @@ public class Grafo_Proprietario {
                     System.out.println(owner);
                 }
                 i++;
-                if(i>1000)break;
 
         }
         checkNeighbor(mapaTerreno);
