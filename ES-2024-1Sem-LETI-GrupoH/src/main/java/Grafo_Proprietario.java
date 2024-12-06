@@ -43,7 +43,7 @@ public class Grafo_Proprietario {
         Map<Integer, List<Terreno>> terrenosPorOwner = new HashMap<>();
         for (Terreno terreno : mapaTerreno.values()) {
             terrenosPorOwner
-                    .computeIfAbsent(terreno.getOWNER(), k -> new ArrayList<>())
+                    .computeIfAbsent(terreno.getOWNER(), _ -> new ArrayList<>())
                     .add(terreno);
         }
         Set<Integer> owners = terrenosPorOwner.keySet();

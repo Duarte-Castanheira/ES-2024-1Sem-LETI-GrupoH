@@ -46,7 +46,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Municipio(){
-        double area_Municipio = areaMedia.calcular_AreaMedia("Município", "Calheta");
+        double area_Municipio = areaMedia.calcular_AreaMedia("Municipio", "Calheta");
         assertEquals(598.47, area_Municipio, 0.01);
     }
 

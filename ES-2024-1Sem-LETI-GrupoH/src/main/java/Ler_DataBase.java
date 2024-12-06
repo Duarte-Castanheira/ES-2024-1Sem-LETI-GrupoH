@@ -22,6 +22,8 @@ public class Ler_DataBase {
             while ((linha = reader.readNext()) != null) {
                      String s = String.join(",", linha);
                      terreno = s.split(";");
+                     if(terreno[7].equalsIgnoreCase("na"))
+                         break;
                      int id = Integer.parseInt(terreno[0]);
                     Terreno t = new Terreno(id,terreno[1],terreno[2],
                          Double.parseDouble(terreno[3]),Double.parseDouble(terreno[4]),CreateGeometry(terreno[5]),

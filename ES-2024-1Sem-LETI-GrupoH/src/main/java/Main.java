@@ -6,8 +6,7 @@ import java.util.Map;
 
 public class Main {
     private static Map<Integer,Terreno> terrenos = new HashMap<>();
-    private static Area_Media areaMedia;
-    private static Area_Media_Proprietario areaMedia_proprietario;
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Interface Gráfica");
@@ -38,15 +37,10 @@ public class Main {
     }
 
 
-    private static void carregarFicheiro() {
+    private static void carregarFicheiro(JButton btnGrafos, JButton btnAreas, JButton btnSugestoes) {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Abrir ficheiro");
 
-        fileChooser.setAcceptAllFileFilterUsed(false);
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Ficheiro de Texto", "txt"));
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Imagens", "png", "jpg", "gif"));
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Áudio", "wav", "mp3", "aac"));
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Todos os ficheiros", "*"));
 
         int returnVal = fileChooser.showOpenDialog(null);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -55,8 +49,8 @@ public class Main {
             JOptionPane.showMessageDialog(null, "Ficheiro Selecionado: " + file.getAbsolutePath());
 
             terrenos = Ler_DataBase.ReadFile(file);
-            areaMedia = new Area_Media(terrenos);
-            areaMedia_proprietario = new Area_Media_Proprietario(terrenos);
+            new Area_Media(terrenos);
+            new Area_Media_Proprietario(terrenos);
 
             // Ativar os botões após o carregamento do ficheiro
             btnGrafos.setEnabled(true);
@@ -68,7 +62,7 @@ public class Main {
     }
 
 
-    private static void mostrarOpcoesGrafos(JFrame frame) {
+    static void mostrarOpcoesGrafos(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Opções de Grafos", true);
         dialog.setSize(200, 150);
         dialog.setLayout(new FlowLayout());
@@ -91,7 +85,7 @@ public class Main {
     }
 
 
-    private static void mostrarOpcoesAreas(JFrame frame) {
+    static void mostrarOpcoesAreas(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
         dialog.setSize(200, 200);
         dialog.setLayout(new FlowLayout());
@@ -147,17 +141,37 @@ public class Main {
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida: " + mensagem);
-                    return; // Sai do método se a opção for inválida
+                    return;
             }
         }
         JOptionPane.showMessageDialog(null, "Área média de " + mensagem + ": " + result);
     }
 
 
-    // Método chamado ao clicar em "Sugestões"
     private static void sugestoes() {
-        JOptionPane.showMessageDialog(null, "Função para sugestões chamada!");
-        // Implementar funcionalidade de sugestões aqui
+        try {
+            // Pedir o primeiro número
+            String input1 = JOptionPane.showInputDialog(null, "Insira o primeiro número:");
+            if (input1 == null || input1.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Operação cancelada ou entrada inválida.");
+                return;
+            }
+            int numero1 = Integer.parseInt(input1);
+
+            // Pedir o segundo número
+            String input2 = JOptionPane.showInputDialog(null, "Insira o segundo número:");
+            if (input2 == null || input2.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Operação cancelada ou entrada inválida.");
+                return;
+            }
+            int numero2 = Integer.parseInt(input2);
+
+            TrocaTerrenos.gerarSugestoesDeTroca(terrenos,numero1,numero2);
+
+            JOptionPane.showMessageDialog(null, "Resultado da sugestão: ");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, insira apenas números válidos.");
+        }
     }
 
 

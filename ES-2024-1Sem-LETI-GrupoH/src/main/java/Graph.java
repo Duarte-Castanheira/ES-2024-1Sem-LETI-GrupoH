@@ -12,20 +12,17 @@ public class Graph {
     private static DefaultUndirectedGraph<Integer, DefaultEdge> grafo = new DefaultUndirectedGraph<>(DefaultEdge.class);
 
     public static DefaultUndirectedGraph<Integer, DefaultEdge> getGrafo() {
-        //grafo = new HashMap<>();
         return grafo;
     }
 
     public static void CreateGraph(Map<Integer,Terreno> mapaTerreno) {
 
-        grafo = new DefaultUndirectedGraph<Integer,DefaultEdge>(DefaultEdge.class);
+        grafo = new DefaultUndirectedGraph<>(DefaultEdge.class);
 
         for (Map.Entry<Integer, Terreno> entry : mapaTerreno.entrySet()) {
             Integer id = entry.getKey();
             Terreno t = entry.getValue();
 
-            if (t.getOBJECTID() == 600)
-                break;
             System.out.println(id);
             grafo.addVertex(id);
         }
@@ -49,10 +46,10 @@ public class Graph {
         }
     }
     private static boolean isNeighbor(Terreno t, Terreno neighbor) {
-        Geometry geomTerreno = t.getGeometry(); // Supondo que isso retorne um Geometry JTS
+        Geometry geomTerreno = t.getGeometry();
         Geometry bufferedGeomTerreno = geomTerreno.buffer(0.0000000001);
         Geometry geomOutroTerreno = neighbor.getGeometry();
-        Geometry bufferedGeomOutroTerreno = geomOutroTerreno.buffer(0.0000000001);            // Verificar se as geometrias tocam ou intersectam
+        Geometry bufferedGeomOutroTerreno = geomOutroTerreno.buffer(0.0000000001);
         return bufferedGeomTerreno.touches(bufferedGeomOutroTerreno) || bufferedGeomTerreno.intersects(bufferedGeomOutroTerreno);
     }
 
@@ -62,16 +59,13 @@ public class Graph {
 
         mxGraph.getModel().beginUpdate();
         try {
-            // Mapeia cada vértice a um objeto de visualização
             Map<Integer, Object> vertexMap = new HashMap<>();
 
-            // Adiciona os vértices ao gráfico
             for (Integer vertex : grafo.vertexSet()) {
                 Object v = mxGraph.insertVertex(parent, null, vertex.toString(), 0, 0, 80, 30);
                 vertexMap.put(vertex, v);
             }
 
-            // Adiciona as arestas ao gráfico
             for (DefaultEdge edge : grafo.edgeSet()) {
                 Integer source = grafo.getEdgeSource(edge);
                 Integer target = grafo.getEdgeTarget(edge);
@@ -81,16 +75,14 @@ public class Graph {
             mxGraph.getModel().endUpdate();
         }
 
-        // Aplica layout ao grafo
         mxCircleLayout layout = new mxCircleLayout(mxGraph);
         layout.execute(mxGraph.getDefaultParent());
 
-        // Cria e exibe o componente gráfico em uma janela
         mxGraphComponent graphComponent = new mxGraphComponent(mxGraph);
         JFrame frame = new JFrame("Visualização do Grafo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(graphComponent);
-        frame.setSize(600, 400); // Tamanho ajustado para maior visibilidade
+        frame.setSize(600, 400);
         frame.setVisible(true);
     }
 

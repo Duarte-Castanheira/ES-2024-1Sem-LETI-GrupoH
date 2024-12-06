@@ -2,7 +2,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.locationtech.jts.geom.MultiPolygon;
@@ -110,5 +112,23 @@ class TrocaTerrenosTest {
         terrenos.put(2, new Terreno(2, "7344660.0", "2,99622E+12", 55.63800662596267, 151.76387471712783, g2, 68, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
         Map<Integer, TrocaTerrenos.Troca> trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,1,16);
         assertTrue(trocas.isEmpty(), "Não deve haver trocas possíveis para um único proprietário.");
+    }
+
+
+    @Test
+    void calcularVizinhos() {
+        List<Terreno> terrenosOwner1 = new ArrayList<>();
+        terrenosOwner1.add(terrenos.get(127));
+        terrenosOwner1.add(terrenos.get(121));
+        terrenosOwner1.add(terrenos.get(3));
+
+
+        assertTrue( Grafo_Proprietario.saoContiguos(terrenos.get(3), terrenos.get(121)));
+        assertTrue( Grafo_Proprietario.saoContiguos(terrenos.get(127), terrenos.get(3)));
+        assertTrue( Grafo_Proprietario.saoContiguos(terrenos.get(121), terrenos.get(127)));
+        int numVizinhos = TrocaTerrenos.calcularVizinhos(terrenosOwner1);
+
+        // Verifica se o número de vizinhos foi calculado corretamente.
+        assertEquals(3, numVizinhos);
     }
 }
