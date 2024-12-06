@@ -9,9 +9,19 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de teste para a classe Area_Media.
+ * Verifica os cálculos de área média por freguesia, município e ilha.
+ */
+
 class Area_MediaTest {
 
     private Area_Media area;
+
+    /**
+     * Método que é executado antes de cada teste.
+     * Inicializa os dados de teste com terrenos predefinidos.
+     */
 
     @BeforeEach
     void setUp() {
@@ -35,10 +45,20 @@ class Area_MediaTest {
         area = new Area_Media(terrenos);
     }
 
+    /**
+     * Método que é executado após cada teste.
+     * Limpa os dados da instância para evitar interferências entre testes.
+     */
+
     @AfterEach
     void tearDown() {
         area = null;
     }
+
+    /**
+     * Teste que verifica o cálculo da área média por freguesia.
+     * Verifica se a área média da freguesia "Arco da Calheta" é 176.91.
+     */
 
     @Test
     void areaFreguesia(){
@@ -46,11 +66,21 @@ class Area_MediaTest {
         assertEquals(176.91, areaMedia, 0.01);
     }
 
+    /**
+     * Teste que verifica o cálculo da área média por município.
+     * Verifica se a área média do município "Calheta" é 176.91.
+     */
+
     @Test
     void areaMunicipio(){
         double areaMedia = area.calcularAreaMedia_Municipio( "Calheta");
         assertEquals(176.91, areaMedia, 0.01);
     }
+
+    /**
+     * Teste que verifica o cálculo da área média por ilha.
+     * Verifica se a área média da ilha "Ilha da Madeira (Madeira)" é 1676.77.
+     */
 
     @Test
     void areaIlha(){

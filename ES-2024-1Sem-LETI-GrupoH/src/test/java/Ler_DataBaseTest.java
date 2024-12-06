@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +7,16 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de teste para a classe `Ler_DataBase`, que verifica o comportamento
+ * do método `ReadFile`.
+ */
+
 class Ler_DataBaseTest {
+
+    /**
+     * Configuração inicial antes de cada teste. Cria um arquivo CSV temporário com dados de teste.
+     */
 
     @BeforeEach
     void setUp() {
@@ -26,28 +34,24 @@ class Ler_DataBaseTest {
         }
     }
 
-
-    @AfterEach
-    void tearDown() {
-    }
+    /**
+     * Testa o método `ReadFile` para verificar se ele processa corretamente um arquivo CSV.
+     */
 
     @Test
     void ReadFile() {
 
-         try {
-             // Substituindo o caminho do arquivo temporariamente
-             Ler_DataBase.ReadFile("test-temp.csv");
-             // Nenhuma exceção foi lançada
-             assertTrue(true);
-         } catch (Exception e) {
-             fail("O método ReadFile lançou uma exceção: " + e.getMessage());
-         } finally {
-             // Deletar o arquivo de teste após o teste
-             File arquivo = new File("test-temp.csv");
-             if (arquivo.exists()) {
-                 arquivo.delete();
-             }
-         }
+        try {
+            Ler_DataBase.ReadFile("test-temp.csv");
+            assertTrue(true);
+        } catch (Exception e) {
+            fail("O método ReadFile lançou uma exceção: " + e.getMessage());
+        } finally {
+            File arquivo = new File("test-temp.csv");
+            if (arquivo.exists()) {
+                arquivo.delete();
+            }
+        }
     }
 
 
