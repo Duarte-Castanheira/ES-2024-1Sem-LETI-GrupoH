@@ -23,6 +23,10 @@ class GraphTest {
      * Método para configurar o estado inicial antes de cada teste
      */
 
+    /**
+     * Método para configurar o estado inicial antes de cada teste
+     */
+
     @BeforeEach
     void setUp() {
         terrenos = new HashMap<>();

@@ -1,5 +1,10 @@
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultUndirectedGraph;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,27 +29,34 @@ public class Main {
         frame.setSize(400, 300);
         frame.setLayout(new FlowLayout());
 
+        // Botões principais
         JButton btnCarregar = new JButton("Carregar Ficheiro");
         JButton btnGrafos = new JButton("Grafos");
         JButton btnAreas = new JButton("Áreas");
         JButton btnSugestoes = new JButton("Sugestões");
 
-        btnGrafos.setEnabled(false);
-        btnAreas.setEnabled(false);
-        btnSugestoes.setEnabled(false);
-
+        // Adicionar botões à janela
         frame.add(btnCarregar);
         frame.add(btnGrafos);
         frame.add(btnAreas);
         frame.add(btnSugestoes);
 
-        btnCarregar.addActionListener(e -> carregarFicheiro( btnGrafos,btnAreas,btnSugestoes));
+        // Adicionar ação ao botão "Carregar Ficheiro"
+        btnCarregar.addActionListener(e -> carregarFicheiro());
+
+        // Adicionar ação ao botão "Grafos"
         btnGrafos.addActionListener(e -> mostrarOpcoesGrafos(frame));
+
+        // Adicionar ação ao botão "Áreas"
         btnAreas.addActionListener(e -> mostrarOpcoesAreas(frame));
+
+        // Adicionar ação ao botão "Sugestões"
         btnSugestoes.addActionListener(e -> sugestoes());
 
+        // Tornar a janela visível
         frame.setVisible(true);
     }
+
 
     /**
      * Método para carregar um ficheiro CSV contendo os dados dos terrenos.
@@ -57,10 +69,11 @@ public class Main {
 
 
         int returnVal = fileChooser.showOpenDialog(null);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
 
             JOptionPane.showMessageDialog(null, "Ficheiro Selecionado: " + file.getAbsolutePath());
+
 
             terrenos = Ler_DataBase.ReadFile(file);
             new Area_Media(terrenos);
@@ -80,6 +93,7 @@ public class Main {
      */
 
     static void mostrarOpcoesGrafos(JFrame frame) {
+
         JDialog dialog = new JDialog(frame, "Opções de Grafos", true);
         dialog.setSize(200, 150);
         dialog.setLayout(new FlowLayout());
@@ -92,20 +106,24 @@ public class Main {
 
         btnPropriedades.addActionListener(e -> {
             Graph.CreateGraph(terrenos);
+//            JOptionPane.showMessageDialog(dialog, "Função de propriedades chamada!");
         });
 
         btnProprietarios.addActionListener(e -> {
             Grafo_Proprietario.construirGrafo(terrenos);
+//            JOptionPane.showMessageDialog(dialog, "Função de proprietários chamada!");
         });
 
         dialog.setVisible(true);
     }
+
 
     /**
      * Mostra opções relacionadas ao cálculo de áreas médias em uma janela de diálogo.
      */
 
     static void mostrarOpcoesAreas(JFrame frame) {
+  
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
         dialog.setSize(200, 200);
         dialog.setLayout(new FlowLayout());
@@ -122,6 +140,7 @@ public class Main {
         dialog.setVisible(true);
     }
 
+  
     /**
      * Mostra sub-opções para cálculo de áreas médias com base em critérios específicos.
      */
@@ -146,10 +165,10 @@ public class Main {
         dialog.setVisible(true);
     }
 
+
     /**
      * Solicita ao usuário uma entrada para calcular áreas médias com base em uma palavra-chave.
      */
-
     private static void pedirPalavra(int i, String mensagem) {
         double result = -1;
         String palavra = JOptionPane.showInputDialog("Insira uma palavra:");
@@ -158,13 +177,13 @@ public class Main {
         } else if (palavra != null && !palavra.isEmpty()) {
             switch (mensagem.toLowerCase()) {
                 case "freguesia":
-                    result = Area_Media.calcularAreaMedia_Freguesia(palavra);
+                    result = areaMedia.calcularAreaMedia_Freguesia(palavra);
                     break;
                 case "municipio":
-                    result = Area_Media.calcularAreaMedia_Municipio(palavra);
+                    result = areaMedia.calcularAreaMedia_Municipio(palavra);
                     break;
                 case "ilha":
-                    result = Area_Media.calcularAreaMedia_Ilha(palavra);
+                    result = areaMedia.calcularAreaMedia_Ilha(palavra);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida: " + mensagem);
