@@ -6,14 +6,32 @@ import org.locationtech.jts.io.WKTReader;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+* Classe de teste para a classe Terreno utilizando JUnit 5.
+*/
+
 class TerrenoTest {
 
+    /**
+    * Instância da classe Terreno para ser utilizada nos testes.
+    */
+
     private Terreno terreno;
+
+    /**
+     * Método configurado para ser executado antes de cada teste.
+     * Ele inicializa o objeto Terreno, garantindo um estado limpo para cada teste.
+     */
 
     @BeforeEach
     void setUp() {
         terreno = new Terreno();
     }
+
+    /**
+     * Testa o construtor padrão da classe Terreno.
+     * Verifica se os atributos são inicializados com valores padrão esperados.
+     */
 
     @Test
     void testConstrutor() {
@@ -28,6 +46,10 @@ class TerrenoTest {
         assertNull(terreno.getMunicipio());
         assertNull(terreno.getIlha());
     }
+
+    /**
+     * Testa os métodos getters e setters da classe Terreno.
+     */
 
     @Test
     void testGettersAndSetters() {
