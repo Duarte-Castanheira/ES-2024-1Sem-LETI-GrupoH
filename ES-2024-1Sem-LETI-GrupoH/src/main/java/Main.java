@@ -94,7 +94,7 @@ public class Main {
     static void mostrarOpcoesGrafos(JFrame frame) {
 
         JDialog dialog = new JDialog(frame, "Opções de Grafos", true);
-        dialog.setSize(200, 150);
+        dialog.setSize(300, 250);
         dialog.setLayout(new FlowLayout());
 
         JButton btnPropriedades = new JButton("Propriedades");
@@ -122,7 +122,7 @@ public class Main {
     static void mostrarOpcoesAreas(JFrame frame) {
 
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
-        dialog.setSize(200, 200);
+        dialog.setSize(350, 150);
         dialog.setLayout(new FlowLayout());
 
         JButton btnOpcao1 = new JButton("Area média");

@@ -138,8 +138,14 @@ public class Grafo_Proprietario {
 
         mxCircleLayout layout = new mxCircleLayout(mxGraph);
         layout.execute(mxGraph.getDefaultParent());
-
         mxGraphComponent graphComponent = new mxGraphComponent(mxGraph);
+
+        graphComponent.setZoomFactor(1.25); // Define a taxa de zoom
+        graphComponent.setEnabled(true);
+        graphComponent.setWheelScrollingEnabled(true); // Permite zoom com a roda do mouse
+        graphComponent.zoomTo(0.25, false);
+
+
         JFrame frame = new JFrame("Visualização do Grafo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(graphComponent);

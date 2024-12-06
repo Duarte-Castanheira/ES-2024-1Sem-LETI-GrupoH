@@ -35,7 +35,8 @@ public class Graph {
         for (Map.Entry<Integer, Terreno> entry : mapaTerreno.entrySet()) {
             Integer id = entry.getKey();
             grafo.addVertex(id); // Adiciona o ID do terreno como vértice.
-            System.out.println(id); // Log para depuração.
+            System.out.println(id);
+          //  if(id == 1000)break;
         }
 
         checkNeighbor(mapaTerreno);
@@ -107,8 +108,13 @@ public class Graph {
 
         mxCircleLayout layout = new mxCircleLayout(mxGraph);
         layout.execute(mxGraph.getDefaultParent());
-
         mxGraphComponent graphComponent = new mxGraphComponent(mxGraph);
+
+        graphComponent.setZoomFactor(1.25); // Define a taxa de zoom
+        graphComponent.setEnabled(true);
+        graphComponent.setWheelScrollingEnabled(true); // Permite zoom com a roda do mouse
+        graphComponent.zoomTo(0.25, false);
+
         JFrame frame = new JFrame("Visualização do Grafo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(graphComponent);
