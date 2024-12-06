@@ -1,20 +1,38 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+/**
+ * Classe para calcular a área média de terrenos agrupados por proprietário,
+ * considerando uma área geográfica específica (freguesia, município ou ilha).
+ */
 public class Area_Media_Proprietario {
 
-    private static Map<Integer,Terreno> terreno;
+    /**
+     * Declaração de um mapa estático para armazenar terrenos.
+     */
 
-    public Area_Media_Proprietario(Map<Integer,Terreno> terreno) {
+    private static Map<Integer, Terreno> terreno;
+
+    /**
+     * Construtor da classe que inicializa o mapa de terrenos.
+     *
+     * @param terreno Mapa de terrenos a ser utilizado nos cálculos.
+     */
+    public Area_Media_Proprietario(Map<Integer, Terreno> terreno) {
         this.terreno = terreno;
     }
 
-    public static double calcular_AreaMedia(String areaGeografica, String nome) {
+    /**
+     * Calcula a área média de terrenos agrupados por proprietário em uma área geográfica específica.
+     *
+     * @param areaGeografica Tipo da área geográfica (freguesia, município ou ilha).
+     * @param nome Nome da área geográfica.
+     * @return A área média por proprietário, ou -1 se não houver terrenos na área especificada.
+     */
+    public static double obterTerrenos(String areaGeografica, String nome) {
         Map<Integer, Terreno> terrenosEscolhidos = new HashMap<>();
 
-        for (Map.Entry<Integer,Terreno> entry : terreno.entrySet()) {
+        for (Map.Entry<Integer, Terreno> entry : terreno.entrySet()) {
             Terreno currentTerreno = entry.getValue();
             boolean shouldAdd = false;
 
@@ -29,24 +47,31 @@ public class Area_Media_Proprietario {
                     shouldAdd = currentTerreno.getIlha().equalsIgnoreCase(nome);
                     break;
                 default:
-                    // Caso deseje lidar com uma área geográfica não reconhecida
                     System.err.println("Área geográfica desconhecida: " + areaGeografica);
                     break;
             }
+
             if (shouldAdd) {
                 terrenosEscolhidos.put(currentTerreno.getOBJECTID(), currentTerreno);
             }
-            if (terrenosEscolhidos.isEmpty()) {
-                return -1;
-            }
         }
 
+        if (terrenosEscolhidos.isEmpty()) {
+            return -1;
+        }
+
+        return calcular_Area_Media(terrenosEscolhidos);
+    }
+
+    public static double calcular_Area_Media(Map<Integer,Terreno> terrenos) {
         Map<Integer, Double> areasAgrupadasPorProprietario = new HashMap<>();
 
-        for (Terreno terreno : terrenosEscolhidos.values()) {
+        for (Terreno terreno : terrenos.values()) {
             int proprietario = terreno.getOWNER();
-            areasAgrupadasPorProprietario.put(proprietario, areasAgrupadasPorProprietario.getOrDefault(proprietario, 0.0) + terreno.getShape_Area());
+            areasAgrupadasPorProprietario.put(proprietario,
+                    areasAgrupadasPorProprietario.getOrDefault(proprietario, 0.0) + terreno.getShape_Area());
         }
+
         double somaArea = 0.0;
         for (double area : areasAgrupadasPorProprietario.values()) {
             somaArea += area;

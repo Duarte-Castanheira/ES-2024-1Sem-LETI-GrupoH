@@ -1,3 +1,5 @@
+
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,10 +16,14 @@ import org.locationtech.jts.io.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de teste para a classe `TrocaTerrenosTest`, que verifica o
+ *comportamento da sugestão de trocas de terrenos.
+ */
+
 class TrocaTerrenosTest {
 
     private Map<Integer, Terreno> terrenos;
-    private WKTReader reader;
 
     MultiPolygon g1;
     MultiPolygon g2;
@@ -25,6 +31,11 @@ class TrocaTerrenosTest {
     MultiPolygon g4;
     MultiPolygon g5;
     MultiPolygon g6;
+
+    /** Este método é executado antes de cada teste.
+     *Cria vários objetos `Terreno` e os coloca no mapa `terrenos`
+     * para que possam ser utilizados nos testes.
+     */
 
     @BeforeEach
     void setUp() {
@@ -57,10 +68,19 @@ class TrocaTerrenosTest {
         terrenos.put(terreno6.getOBJECTID(),terreno6);
     }
 
+
+    /**
+     * Este método é executado após cada teste.
+     * Limpa o mapa `terrenos`, garantindo que os testes não interfiram uns com os outros.
+     */
     @AfterEach
     void tearDown() {
         terrenos.clear();
     }
+
+    /**
+     * Testa o método `gerarSugestoesDeTroca` verificando se as trocas geradas têm impacto positivo.
+     */
 
     @Test
     void testGerarSugestoesDeTroca_impactoPositivo() {
@@ -87,23 +107,45 @@ class TrocaTerrenosTest {
         assertNotNull(impactosNegativos);
     }
 
+    /**
+     * Testa o método `gerarSugestoesDeTroca` verificando se a diferença de área entre os terrenos trocados é adequada.
+     * Garante que a diferença da área entre os terrenos trocados seja menor ou igual a 10.
+     */
+
     @Test
     void testGerarSugestoesDeTroca_diferencaMinimaDeArea() {
-        Map<Integer, TrocaTerrenos.Troca > trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,16,14);
+        Map<Integer, TrocaTerrenos.Troca> trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos, 1, 2);
+
         for (TrocaTerrenos.Troca troca : trocas.values()) {
-            double diferenca = Math.abs(troca.terreno1.getShape_Area() - troca.terreno2.getShape_Area());
-            assertTrue(diferenca > 10, "A diferença de áreas entre terrenos trocados deve ser <= 10.");
+            Terreno t1 = terrenos.get(troca.terrenoid1);
+            Terreno t2 = terrenos.get(troca.terrenoid2);
+
+            double diferenca = Math.abs(t1.getShape_Area() - t2.getShape_Area());
+            assertTrue(diferenca <= 10, "A diferença de áreas deve ser <= 10.");
         }
     }
 
+    /**
+     * Testa o método `gerarSugestoesDeTroca` para garantir que as trocas acontecem entre diferentes proprietários.
+     * Verifica que cada troca ocorre entre terrenos pertencentes a proprietários distintos.
+     */
+
     @Test
     void testGerarSugestoesDeTroca_trocasEntreProprietarios() {
-        Map<Integer, TrocaTerrenos.Troca > trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,1,16);
+        Map<Integer, TrocaTerrenos.Troca> trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos, 1, 2);
+
         for (TrocaTerrenos.Troca troca : trocas.values()) {
-            assertNotEquals(troca.terreno1.getOWNER(), troca.terreno2.getOWNER(),
+            Terreno t1 = terrenos.get(troca.terrenoid1);
+            Terreno t2 = terrenos.get(troca.terrenoid2);
+
+            assertNotEquals(t1.getOWNER(), t2.getOWNER(),
                     "As trocas devem ocorrer entre diferentes proprietários.");
         }
     }
+
+    /**
+     * Testa o método `gerarSugestoesDeTroca` para o caso de não existirem trocas possíveis.
+     */
 
     @Test
     void testGerarSugestoesDeTroca_semTrocasPossiveis() {
@@ -114,6 +156,10 @@ class TrocaTerrenosTest {
         assertTrue(trocas.isEmpty(), "Não deve haver trocas possíveis para um único proprietário.");
     }
 
+    /**
+     * Testa o método `calcularVizinhos`
+     * Utiliza o método `saoContiguos` para validar se os terrenos são contíguos entre si.
+     */
 
     @Test
     void calcularVizinhos() {

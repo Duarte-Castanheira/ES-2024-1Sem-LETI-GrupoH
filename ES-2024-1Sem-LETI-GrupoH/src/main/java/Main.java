@@ -4,7 +4,17 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe principal que gerencia a interface gráfica da aplicação.
+ * Permite ao usuário interagir com funcionalidades como carregar ficheiros, visualizar grafos, calcular áreas médias, e sugerir trocas.
+ */
+
 public class Main {
+
+    /**
+     * Mapa para armazenar os terrenos carregados do ficheiro.
+     */
+
     private static Map<Integer,Terreno> terrenos = new HashMap<>();
 
 
@@ -36,6 +46,10 @@ public class Main {
         frame.setVisible(true);
     }
 
+    /**
+     * Método para carregar um ficheiro CSV contendo os dados dos terrenos.
+     * Ativa os botões dependentes após o carregamento bem-sucedido.
+     */
 
     private static void carregarFicheiro(JButton btnGrafos, JButton btnAreas, JButton btnSugestoes) {
         JFileChooser fileChooser = new JFileChooser();
@@ -61,6 +75,9 @@ public class Main {
         }
     }
 
+    /**
+     * Mostra opções relacionadas aos grafos em uma janela de diálogo.
+     */
 
     static void mostrarOpcoesGrafos(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Opções de Grafos", true);
@@ -84,6 +101,9 @@ public class Main {
         dialog.setVisible(true);
     }
 
+    /**
+     * Mostra opções relacionadas ao cálculo de áreas médias em uma janela de diálogo.
+     */
 
     static void mostrarOpcoesAreas(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
@@ -101,6 +121,10 @@ public class Main {
 
         dialog.setVisible(true);
     }
+
+    /**
+     * Mostra sub-opções para cálculo de áreas médias com base em critérios específicos.
+     */
 
     private static void mostrarSubOpcoes(int i, String opcao) {
         JDialog dialog = new JDialog((Frame) null, "Opções de " + opcao, true);
@@ -122,12 +146,15 @@ public class Main {
         dialog.setVisible(true);
     }
 
+    /**
+     * Solicita ao usuário uma entrada para calcular áreas médias com base em uma palavra-chave.
+     */
 
     private static void pedirPalavra(int i, String mensagem) {
         double result = -1;
         String palavra = JOptionPane.showInputDialog("Insira uma palavra:");
         if(i==2) {
-            result = Area_Media_Proprietario.calcular_AreaMedia(mensagem, palavra);
+            result = Area_Media_Proprietario.obterTerrenos(mensagem, palavra);
         } else if (palavra != null && !palavra.isEmpty()) {
             switch (mensagem.toLowerCase()) {
                 case "freguesia":
@@ -147,6 +174,9 @@ public class Main {
         JOptionPane.showMessageDialog(null, "Área média de " + mensagem + ": " + result);
     }
 
+    /**
+     * Mostra uma funcionalidade de sugestão de troca entre dois terrenos.
+     */
 
     private static void sugestoes() {
         try {
@@ -165,10 +195,10 @@ public class Main {
                 return;
             }
             int numero2 = Integer.parseInt(input2);
-
-            TrocaTerrenos.gerarSugestoesDeTroca(terrenos,numero1,numero2);
-
-            JOptionPane.showMessageDialog(null, "Resultado da sugestão: ");
+            Map<Integer, TrocaTerrenos.Troca> trocas = new HashMap<>();
+            trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,numero1,numero2);
+            System.out.println(trocas);
+            JOptionPane.showMessageDialog(null, "Resultado da sugestão: " + trocas);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor, insira apenas números válidos.");
         }

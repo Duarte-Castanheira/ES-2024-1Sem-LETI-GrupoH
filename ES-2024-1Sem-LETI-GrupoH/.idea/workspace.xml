@@ -8,7 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Projeto quase acabado">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Grafo_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grafo_Proprietario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Terreno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Terreno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Grafo_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Grafo_ProprietarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main_Duarte" />
+        <entry key="$PROJECT_DIR$/.." value="main_Afonso" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -51,7 +66,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -106,15 +121,15 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.50689656",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="QodanaHighlightedReportService">
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output1\qodana.sarif.json" />
-        <option name="reportGuid" value="d9381961-3f7f-417e-b0be-2cb77a040d4d" />
+        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output2\qodana.sarif.json" />
+        <option name="reportGuid" value="d8611270-6b88-478b-9cae-751bfaa7f9dc" />
         <option name="reportName" value="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
       </LocalReportPersistedInfo>
     </option>
@@ -126,6 +141,7 @@
     <option name="descriptions">
       <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output1\qodana.sarif.json" reportGuid="d9381961-3f7f-417e-b0be-2cb77a040d4d" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
       <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="f5d4b434-df46-4da5-a7c2-64f9a513b8ad" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+      <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output2\qodana.sarif.json" reportGuid="d8611270-6b88-478b-9cae-751bfaa7f9dc" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
     </option>
   </component>
   <component name="RecentsManager">
@@ -148,42 +164,37 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in ES-2024-1Sem-LETI-GrupoH">
-    <configuration name="MainTest.testCalculoAreaMediaFreguesia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Area_Media_ProprietarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testCalculoAreaMediaFreguesia" />
+      <option name="MAIN_CLASS_NAME" value="Area_Media_ProprietarioTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ler_DataBaseTest.ReadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Ler_DataBaseTest" />
+      <option name="METHOD_NAME" value="ReadFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.testCalculoAreaMediaMunicipio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testCalculoAreaMediaMunicipio" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.testCarregarFicheiro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testCarregarFicheiro" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TrocaTerrenosTest.calcularVizinhos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TrocaTerrenosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TrocaTerrenosTest" />
-      <option name="METHOD_NAME" value="calcularVizinhos" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,10 +210,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in ES-2024-1Sem-LETI-GrupoH" />
-        <item itemvalue="JUnit.TrocaTerrenosTest.calcularVizinhos" />
-        <item itemvalue="JUnit.MainTest.testCalculoAreaMediaFreguesia" />
-        <item itemvalue="JUnit.MainTest.testCarregarFicheiro" />
-        <item itemvalue="JUnit.MainTest.testCalculoAreaMediaMunicipio" />
+        <item itemvalue="JUnit.TrocaTerrenosTest" />
+        <item itemvalue="JUnit.Ler_DataBaseTest.ReadFile" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Area_Media_ProprietarioTest" />
       </list>
     </recent_temporary>
   </component>
@@ -427,12 +438,16 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_MediaTest.ic" NAME="Area_MediaTest Coverage Results" MODIFIED="1733070004390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TrocaTerrenosTest_testGerarSugestoesDeTroca_impactoPositivo.ic" NAME="TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo Coverage Results" MODIFIED="1733497264515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TerrenoTest.ic" NAME="TerrenoTest Coverage Results" MODIFIED="1733069989037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Ler_DataBaseTest.ic" NAME="Ler_DataBaseTest Coverage Results" MODIFIED="1733070063427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$java_in_ES_2024_1Sem_LETI_GrupoH.ic" NAME="java in ES-2024-1Sem-LETI-GrupoH Coverage Results" MODIFIED="1733508842903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$java_in_ES_2024_1Sem_LETI_GrupoH.ic" NAME="java in ES-2024-1Sem-LETI-GrupoH Coverage Results" MODIFIED="1733521904850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Main.ic" NAME="Main Coverage Results" MODIFIED="1732628762609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest_testCreateGraph.ic" NAME="GraphTest.testCreateGraph Coverage Results" MODIFIED="1732990490706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_Media_ProprietarioTest.ic" NAME="Area_Media_ProprietarioTest Coverage Results" MODIFIED="1733070018036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

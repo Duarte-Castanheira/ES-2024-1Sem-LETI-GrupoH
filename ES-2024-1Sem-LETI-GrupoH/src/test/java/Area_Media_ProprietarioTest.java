@@ -1,3 +1,5 @@
+
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,10 +11,20 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * Classe de teste para verificar a funcionalidade da classe Area_Media_Proprietario.
+ */
+
 class Area_Media_ProprietarioTest {
 
     private static Map<Integer, Terreno> terrenos;
     private Area_Media_Proprietario areaMedia;
+
+    /**
+     * Método executado antes de todos os testes.
+     * Inicializa o mapa de terrenos com dados simulados.
+     */
 
     @BeforeAll
     static void beforeAll() {
@@ -33,26 +45,47 @@ class Area_Media_ProprietarioTest {
         terrenos.put(11,new Terreno (11, "17607847.0", "2,98622E+12", 163.02830777164647, 907.0567667929143, g3, 26, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
     }
 
+    /**
+     * Método executado antes de cada teste individual.
+     * Inicializa a instância da classe a ser testada.
+     */
+
+
     @BeforeEach
     void setUp() {
         areaMedia = new Area_Media_Proprietario(terrenos);
     }
 
+    /**
+     * Testa o cálculo da área média por proprietário em uma freguesia.
+     * Verifica se o valor calculado é aproximadamente igual ao esperado (598.47).
+     */
+
     @Test
     void area_Freguesia(){
-        double area_Freguesia = areaMedia.calcular_AreaMedia("Freguesia", "Arco da Calheta");
+        double area_Freguesia = areaMedia.obterTerrenos("Freguesia", "Arco da Calheta");
         assertEquals(598.47, area_Freguesia, 0.01);
     }
 
+    /**
+     * Testa o cálculo da área média por proprietário em um município.
+     * Verifica se o valor calculado é aproximadamente igual ao esperado (598.47).
+     */
+
     @Test
     void area_Municipio(){
-        double area_Municipio = areaMedia.calcular_AreaMedia("Municipio", "Calheta");
+        double area_Municipio = areaMedia.obterTerrenos("Municipio", "Calheta");
         assertEquals(598.47, area_Municipio, 0.01);
     }
 
+    /**
+     * Teste que verifica o cálculo da área média por ilha.
+     * Verifica se a área média da ilha "Ilha da Madeira (Madeira)" é 1676.77.
+     */
+
     @Test
     void area_Ilha(){
-        double area_Ilha = areaMedia.calcular_AreaMedia("Ilha", "Ilha da Madeira (Madeira)");
+        double area_Ilha = areaMedia.obterTerrenos("Ilha", "Ilha da Madeira (Madeira)");
         assertEquals(554.55, area_Ilha, 0.01);
     }
 }
