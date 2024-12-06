@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Area_Media_Proprietario {
 
-    private final Map<Integer,Terreno> terreno;
+    private static Map<Integer,Terreno> terreno;
 
     public Area_Media_Proprietario(Map<Integer,Terreno> terreno) {
         this.terreno = terreno;
@@ -22,7 +22,7 @@ public class Area_Media_Proprietario {
                 case "freguesia":
                     shouldAdd = currentTerreno.getFreguesia().equalsIgnoreCase(nome);
                     break;
-                case "município":
+                case "municipio":
                     shouldAdd = currentTerreno.getMunicipio().equalsIgnoreCase(nome);
                     break;
                 case "ilha":

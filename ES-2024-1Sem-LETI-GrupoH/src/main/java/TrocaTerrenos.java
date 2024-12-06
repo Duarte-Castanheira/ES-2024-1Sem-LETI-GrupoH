@@ -2,7 +2,7 @@ import java.util.*;
 
 public class TrocaTerrenos {
 
-    static class Troca {
+    public static class Troca {
         Terreno terreno1;
         Terreno terreno2;
         double impactoNaMedia;
@@ -15,10 +15,6 @@ public class TrocaTerrenos {
     }
 
     public static Map<Integer, Troca> gerarSugestoesDeTroca(Map<Integer, Terreno> terrenosMap) {
-        // Verificação inicial de entradas
-        if (terrenosMap == null || terrenosMap.isEmpty()) {
-            throw new IllegalArgumentException("O mapa de terrenos não pode ser nulo ou vazio.");
-        }
 
         Map<Integer, Troca> trocasPossiveis = new HashMap<>();
         Map<Integer, Double> somaAreasPorProprietario = new HashMap<>();
@@ -55,7 +51,7 @@ public class TrocaTerrenos {
 
                     // Adiciona a troca ao mapa, classificando por menor diferença de áreas
                     double diferencaArea = Math.abs(t1.getShape_Area() - t2.getShape_Area());
-                    if (diferencaArea <= 10) { // Limite arbitrário para trocas viáveis
+                    if (diferencaArea > 10) { // Limite arbitrário para trocas viáveis
                         int trocaId = Objects.hash(t1.getOBJECTID(), t2.getOBJECTID()); // Gera um ID único baseado nos terrenos
                         trocasPossiveis.put(trocaId, new Troca(t1, t2, impactoTroca));
                     }

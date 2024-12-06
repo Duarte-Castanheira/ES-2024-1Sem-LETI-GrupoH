@@ -42,19 +42,19 @@ class Area_MediaTest {
 
     @Test
     void areaFreguesia(){
-        double areaMedia = area.calcularAreaMedia("Freguesia", "Arco da Calheta");
+        double areaMedia = area.calcularAreaMedia_Freguesia("Arco da Calheta");
         assertEquals(176.91, areaMedia, 0.01);
     }
 
     @Test
     void areaMunicipio(){
-        double areaMedia = area.calcularAreaMedia("Município", "Calheta");
+        double areaMedia = area.calcularAreaMedia_Municipio("Calheta");
         assertEquals(176.91, areaMedia, 0.01);
     }
 
     @Test
     void areaIlha(){
-        double areaMedia = area.calcularAreaMedia("Ilha", "Ilha da Madeira (Madeira)");
+        double areaMedia = area.calcularAreaMedia_Ilha("Ilha da Madeira (Madeira)");
         assertEquals(1676.77, areaMedia, 0.01);
     }
 }
