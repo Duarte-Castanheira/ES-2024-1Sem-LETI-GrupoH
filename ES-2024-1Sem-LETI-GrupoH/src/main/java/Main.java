@@ -1,15 +1,10 @@
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultUndirectedGraph;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-
     private static Map<Integer,Terreno> terrenos = new HashMap<>();
     private static Area_Media areaMedia;
     private static Area_Media_Proprietario areaMedia_proprietario;
@@ -20,44 +15,59 @@ public class Main {
         frame.setSize(400, 300);
         frame.setLayout(new FlowLayout());
 
-        // Botões principais
         JButton btnCarregar = new JButton("Carregar Ficheiro");
         JButton btnGrafos = new JButton("Grafos");
         JButton btnAreas = new JButton("Áreas");
         JButton btnSugestoes = new JButton("Sugestões");
 
-        // Adicionar botões à janela
+        btnGrafos.setEnabled(false);
+        btnAreas.setEnabled(false);
+        btnSugestoes.setEnabled(false);
+
         frame.add(btnCarregar);
         frame.add(btnGrafos);
         frame.add(btnAreas);
         frame.add(btnSugestoes);
 
-        // Adicionar ação ao botão "Carregar Ficheiro"
-        btnCarregar.addActionListener(e -> carregarFicheiro());
-
-        // Adicionar ação ao botão "Grafos"
+        btnCarregar.addActionListener(e -> carregarFicheiro( btnGrafos,btnAreas,btnSugestoes));
         btnGrafos.addActionListener(e -> mostrarOpcoesGrafos(frame));
-
-        // Adicionar ação ao botão "Áreas"
         btnAreas.addActionListener(e -> mostrarOpcoesAreas(frame));
-
-        // Adicionar ação ao botão "Sugestões"
         btnSugestoes.addActionListener(e -> sugestoes());
 
-        // Tornar a janela visível
         frame.setVisible(true);
     }
 
-    // Método chamado ao clicar em "Carregar Ficheiro"
+
     private static void carregarFicheiro() {
-        terrenos = Ler_DataBase.ReadFile("Madeira-Moodle-1.1.csv");
-        areaMedia = new Area_Media(terrenos);
-        areaMedia_proprietario = new Area_Media_Proprietario(terrenos);
-        JOptionPane.showMessageDialog(null, "Função para carregar ficheiro chamada!");
-        // Implementar a funcionalidade de carregar ficheiro aqui
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Abrir ficheiro");
+
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Ficheiro de Texto", "txt"));
+        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Imagens", "png", "jpg", "gif"));
+        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Áudio", "wav", "mp3", "aac"));
+        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Todos os ficheiros", "*"));
+
+        int returnVal = fileChooser.showOpenDialog(null);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+
+            JOptionPane.showMessageDialog(null, "Ficheiro Selecionado: " + file.getAbsolutePath());
+
+            terrenos = Ler_DataBase.ReadFile(file);
+            areaMedia = new Area_Media(terrenos);
+            areaMedia_proprietario = new Area_Media_Proprietario(terrenos);
+
+            // Ativar os botões após o carregamento do ficheiro
+            btnGrafos.setEnabled(true);
+            btnAreas.setEnabled(true);
+            btnSugestoes.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum ficheiro foi selecionado.");
+        }
     }
 
-    // Método para mostrar opções de grafos
+
     private static void mostrarOpcoesGrafos(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Opções de Grafos", true);
         dialog.setSize(200, 150);
@@ -71,18 +81,16 @@ public class Main {
 
         btnPropriedades.addActionListener(e -> {
             Graph.CreateGraph(terrenos);
-//            JOptionPane.showMessageDialog(dialog, "Função de propriedades chamada!");
         });
 
         btnProprietarios.addActionListener(e -> {
             Grafo_Proprietario.construirGrafo(terrenos);
-//            JOptionPane.showMessageDialog(dialog, "Função de proprietários chamada!");
         });
 
         dialog.setVisible(true);
     }
 
-    // Método para mostrar opções de áreas
+
     private static void mostrarOpcoesAreas(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
         dialog.setSize(200, 200);
@@ -100,7 +108,6 @@ public class Main {
         dialog.setVisible(true);
     }
 
-    // Método para mostrar subopções para cada opção de áreas
     private static void mostrarSubOpcoes(int i, String opcao) {
         JDialog dialog = new JDialog((Frame) null, "Opções de " + opcao, true);
         dialog.setSize(250, 200);
@@ -121,22 +128,22 @@ public class Main {
         dialog.setVisible(true);
     }
 
-    // Método para pedir uma palavra ao utilizador
+
     private static void pedirPalavra(int i, String mensagem) {
         double result = -1;
         String palavra = JOptionPane.showInputDialog("Insira uma palavra:");
         if(i==2) {
-            result = areaMedia_proprietario.calcular_AreaMedia(mensagem, palavra);
+            result = Area_Media_Proprietario.calcular_AreaMedia(mensagem, palavra);
         } else if (palavra != null && !palavra.isEmpty()) {
             switch (mensagem.toLowerCase()) {
                 case "freguesia":
-                        result = areaMedia.calcularAreaMedia_Freguesia(palavra);
+                    result = Area_Media.calcularAreaMedia_Freguesia(palavra);
                     break;
                 case "municipio":
-                    result = areaMedia.calcularAreaMedia_Municipio(palavra);
+                    result = Area_Media.calcularAreaMedia_Municipio(palavra);
                     break;
                 case "ilha":
-                    result = areaMedia.calcularAreaMedia_Ilha(palavra);
+                    result = Area_Media.calcularAreaMedia_Ilha(palavra);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida: " + mensagem);
@@ -152,4 +159,6 @@ public class Main {
         JOptionPane.showMessageDialog(null, "Função para sugestões chamada!");
         // Implementar funcionalidade de sugestões aqui
     }
+
+
 }

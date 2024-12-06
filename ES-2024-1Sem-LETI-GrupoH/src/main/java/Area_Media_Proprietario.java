@@ -11,7 +11,7 @@ public class Area_Media_Proprietario {
         this.terreno = terreno;
     }
 
-    public double calcular_AreaMedia(String areaGeografica, String nome) {
+    public static double calcular_AreaMedia(String areaGeografica, String nome) {
         Map<Integer, Terreno> terrenosEscolhidos = new HashMap<>();
 
         for (Map.Entry<Integer,Terreno> entry : terreno.entrySet()) {

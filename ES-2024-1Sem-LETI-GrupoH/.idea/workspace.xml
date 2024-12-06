@@ -7,19 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="updated project">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Updated project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Coordenadas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/grouph/es20241semletigrupoh/MainPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/grouph/es20241semletigrupoh/MainPageTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,8 @@
     "JUnit.Ler_DataBaseTest.ReadFile.executor": "Run",
     "JUnit.Ler_DataBaseTest.executor": "Run",
     "JUnit.TerrenoTest.executor": "Coverage",
-    "JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo.executor": "Coverage",
+    "JUnit.TrocaTerrenosTest.executor": "Run",
+    "JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo.executor": "Run",
     "JUnit.java in ES-2024-1Sem-LETI-GrupoH.executor": "Run",
     "Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor": "Run",
     "Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor": "Run",
@@ -149,20 +146,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Area_MediaTest.areaFreguesia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Area_MediaTest" />
-      <option name="METHOD_NAME" value="areaFreguesia" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,6 +164,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Ler_DataBaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Ler_DataBaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrocaTerrenosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrocaTerrenosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
@@ -187,21 +192,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in ES-2024-1Sem-LETI-GrupoH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TrocaTerrenosTest" />
+        <item itemvalue="JUnit.Ler_DataBaseTest" />
+        <item itemvalue="JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" />
         <item itemvalue="JUnit.Area_Media_ProprietarioTest.area_Municipio" />
-        <item itemvalue="JUnit.java in ES-2024-1Sem-LETI-GrupoH" />
-        <item itemvalue="JUnit.Area_MediaTest.areaFreguesia" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +262,7 @@
       <workItem from="1733399712725" duration="916000" />
       <workItem from="1733400771432" duration="2664000" />
       <workItem from="1733404772800" duration="8064000" />
-      <workItem from="1733481927483" duration="13276000" />
+      <workItem from="1733481927483" duration="20812000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -339,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733483651607</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated project">
+      <option name="closed" value="true" />
+      <created>1733497657091</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733497657091</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +374,8 @@
     <MESSAGE value="Removida a classe Geometry e adicionada dependencia para os multipolygons" />
     <MESSAGE value="Classes alteradas de lista para MAP" />
     <MESSAGE value="updated project" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated project" />
+    <MESSAGE value="Updated project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

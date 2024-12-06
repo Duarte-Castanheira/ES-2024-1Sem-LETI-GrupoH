@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Ler_DataBaseTest {
 
+    File file = new File("test-temp.csv");
+
     @BeforeEach
     void setUp() {
         String conteudoTeste = """
@@ -29,7 +31,7 @@ class Ler_DataBaseTest {
     void ReadFile() {
 
          try {
-             Ler_DataBase.ReadFile("test-temp.csv");
+             Ler_DataBase.ReadFile(file);
              assertTrue(true);
          } catch (Exception e) {
              fail("O método ReadFile lançou uma exceção: " + e.getMessage());
