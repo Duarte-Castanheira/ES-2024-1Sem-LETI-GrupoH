@@ -9,9 +9,19 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de teste para a classe Area_Media.
+ * Verifica os cálculos de área média por freguesia, município e ilha.
+ */
+
 class Area_MediaTest {
 
     private Area_Media area;
+
+    /**
+     * Método que é executado antes de cada teste.
+     * Inicializa os dados de teste com terrenos predefinidos.
+     */
 
     @BeforeEach
     void setUp() {
@@ -27,7 +37,7 @@ class Area_MediaTest {
             throw new RuntimeException(e);
         }
         Map<Integer,Terreno> terrenos = new HashMap<>();
-                terrenos.put(1,new Terreno(1, "7343148.0", "2,99624E+12", 57.2469341921808, 202.05981432070362, g1, 93, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
+        terrenos.put(1,new Terreno(1, "7343148.0", "2,99624E+12", 57.2469341921808, 202.05981432070362, g1, 93, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
         terrenos.put(2,new Terreno(2, "7344660.0", "2,99622E+12", 55.63800662596267, 151.76387471712783, g2, 68, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
         terrenos.put(6004,new Terreno(6004, "7309459.0", "3,16614E+12", 340.13373978055176, 4676.4979913805455, g3, 153, "Câmara de Lobos", "Câmara de Lobos", "Ilha da Madeira (Madeira)"));
 
@@ -35,10 +45,20 @@ class Area_MediaTest {
         area = new Area_Media(terrenos);
     }
 
+    /**
+     * Método que é executado após cada teste.
+     * Limpa os dados da instância para evitar interferências entre testes.
+     */
+
     @AfterEach
     void tearDown() {
         area = null;
     }
+
+    /**
+     * Teste que verifica o cálculo da área média por freguesia.
+     * Verifica se a área média da freguesia "Arco da Calheta" é 176.91.
+     */
 
     @Test
     void areaFreguesia(){
@@ -46,11 +66,21 @@ class Area_MediaTest {
         assertEquals(176.91, areaMedia, 0.01);
     }
 
+    /**
+     * Teste que verifica o cálculo da área média por município.
+     * Verifica se a área média do município "Calheta" é 176.91.
+     */
+
     @Test
     void areaMunicipio(){
         double areaMedia = area.calcularAreaMedia_Municipio("Calheta");
         assertEquals(176.91, areaMedia, 0.01);
     }
+
+    /**
+     * Teste que verifica o cálculo da área média por ilha.
+     * Verifica se a área média da ilha "Ilha da Madeira (Madeira)" é 1676.77.
+     */
 
     @Test
     void areaIlha(){

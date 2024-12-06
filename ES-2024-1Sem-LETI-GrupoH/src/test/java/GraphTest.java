@@ -1,3 +1,4 @@
+
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.jgrapht.graph.Pseudograph;
@@ -11,8 +12,16 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de teste para o Graph
+ */
+
 class GraphTest {
     private Map<Integer,Terreno> terrenos;
+
+    /**
+     * Método para configurar o estado inicial antes de cada teste
+     */
 
     @BeforeEach
     void setUp() {
@@ -38,10 +47,13 @@ class GraphTest {
         terrenos.put(terreno3.getOBJECTID(),terreno3);
     }
 
+    /**
+     * Testa a criação do grafo
+     */
+
     @Test
     public void testCreateGraph() {
 
-        // Cria o grafo
         Graph.CreateGraph(terrenos);
         DefaultUndirectedGraph<Integer, DefaultEdge> grafo = Graph.getGrafo();
 
@@ -54,6 +66,10 @@ class GraphTest {
         assertEquals(Set.of(2), vizinhosTerreno1);
     }
 
+    /**
+     * Testa se o grafo inicial está vazio
+     */
+
     @Test
     public void testEmptyGraph() {
 
@@ -61,6 +77,10 @@ class GraphTest {
         assertNotNull(grafo);
         assertTrue(grafo.vertexSet().isEmpty());
     }
+
+    /**
+     * Testa a criação e visualização do grafo
+     */
 
     @Test
     public void testgenerateGraph() {

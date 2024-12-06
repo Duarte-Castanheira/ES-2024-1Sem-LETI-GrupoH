@@ -11,9 +11,20 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de teste para a classe Grafo_Proprietario.
+ * Esta classe testa as funcionalidades relacionadas à construção de um grafo
+ * que representa a conectividade entre terrenos baseados na sua área geográfica.
+ */
+
 class Grafo_ProprietarioTest {
 
     private Map<Integer,Terreno> terrenos;
+
+    /**
+     * Método que é executado antes de cada teste.
+     * Inicializa os dados de terrenos com valores predefinidos e cria os objetos necessários.
+     */
 
     @BeforeEach
     void setUp() {
@@ -35,6 +46,11 @@ class Grafo_ProprietarioTest {
         terrenos.put(terreno2.getOWNER(),terreno2);
     }
 
+    /**
+     * Teste que verifica a construção do grafo de proprietários.
+     * Verifica se os vértices do grafo correspondem aos proprietários dos terrenos.
+     */
+
     @Test
     void testConstruirGrafo() {
         Grafo_Proprietario.construirGrafo(terrenos);
@@ -42,6 +58,11 @@ class Grafo_ProprietarioTest {
         assertTrue(grafo.containsVertex(68));
         assertTrue(grafo.containsVertex(93));
     }
+
+    /**
+     * Teste que verifica se dois terrenos são contíguos no grafo.
+     * Verifica se dois terrenos são contíguos.
+     */
 
     @Test
     void testSaoContiguos() {
@@ -52,6 +73,11 @@ class Grafo_ProprietarioTest {
         boolean contiguos = Grafo_Proprietario.saoContiguos(t1, t2);
         assertTrue(contiguos, "Os terrenos deveriam ser contíguos.");
     }
+
+    /**
+     * Teste que verifica a geração do grafo.
+     * Executa o método que gera o grafo e verifica se ele não lança exceções durante a execução.
+     */
 
     @Test
     void testGenerateGraph() {

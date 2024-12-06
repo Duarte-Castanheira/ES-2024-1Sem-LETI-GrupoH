@@ -1,8 +1,11 @@
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.locationtech.jts.geom.MultiPolygon;
@@ -11,6 +14,11 @@ import org.locationtech.jts.io.ParseException;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Classe de teste para a classe `TrocaTerrenosTest`, que verifica o
+ *comportamento da sugestão de trocas de terrenos.
+ */
 
 class TrocaTerrenosTest {
 
@@ -23,6 +31,11 @@ class TrocaTerrenosTest {
     MultiPolygon g4;
     MultiPolygon g5;
     MultiPolygon g6;
+
+    /** Este método é executado antes de cada teste.
+     *Cria vários objetos `Terreno` e os coloca no mapa `terrenos`
+     * para que possam ser utilizados nos testes.
+     */
 
     @BeforeEach
     void setUp() {
@@ -55,10 +68,19 @@ class TrocaTerrenosTest {
         terrenos.put(terreno6.getOBJECTID(),terreno6);
     }
 
+
+    /**
+     * Este método é executado após cada teste.
+     * Limpa o mapa `terrenos`, garantindo que os testes não interfiram uns com os outros.
+     */
     @AfterEach
     void tearDown() {
         terrenos.clear();
     }
+
+    /**
+     * Testa o método `gerarSugestoesDeTroca` verificando se as trocas geradas têm impacto positivo.
+     */
 
     @Test
     void testGerarSugestoesDeTroca_impactoPositivo() {
@@ -85,6 +107,11 @@ class TrocaTerrenosTest {
         assertNotNull(impactosNegativos);
     }
 
+    /**
+     * Testa o método `gerarSugestoesDeTroca` verificando se a diferença de área entre os terrenos trocados é adequada.
+     * Garante que a diferença da área entre os terrenos trocados seja menor ou igual a 10.
+     */
+
     @Test
     void testGerarSugestoesDeTroca_diferencaMinimaDeArea() {
         Map<Integer, TrocaTerrenos.Troca > trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,16,14);
@@ -93,6 +120,11 @@ class TrocaTerrenosTest {
             assertTrue(diferenca > 10, "A diferença de áreas entre terrenos trocados deve ser <= 10.");
         }
     }
+
+    /**
+     * Testa o método `gerarSugestoesDeTroca` para garantir que as trocas acontecem entre diferentes proprietários.
+     * Verifica que cada troca ocorre entre terrenos pertencentes a proprietários distintos.
+     */
 
     @Test
     void testGerarSugestoesDeTroca_trocasEntreProprietarios() {
@@ -103,6 +135,10 @@ class TrocaTerrenosTest {
         }
     }
 
+    /**
+     * Testa o método `gerarSugestoesDeTroca` para o caso de não existirem trocas possíveis.
+     */
+
     @Test
     void testGerarSugestoesDeTroca_semTrocasPossiveis() {
         terrenos.clear();
@@ -110,5 +146,27 @@ class TrocaTerrenosTest {
         terrenos.put(2, new Terreno(2, "7344660.0", "2,99622E+12", 55.63800662596267, 151.76387471712783, g2, 68, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
         Map<Integer, TrocaTerrenos.Troca> trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,1,16);
         assertTrue(trocas.isEmpty(), "Não deve haver trocas possíveis para um único proprietário.");
+    }
+
+    /**
+     * Testa o método `calcularVizinhos`
+     * Utiliza o método `saoContiguos` para validar se os terrenos são contíguos entre si.
+     */
+
+    @Test
+    void calcularVizinhos() {
+        List<Terreno> terrenosOwner1 = new ArrayList<>();
+        terrenosOwner1.add(terrenos.get(127));
+        terrenosOwner1.add(terrenos.get(121));
+        terrenosOwner1.add(terrenos.get(3));
+
+
+        assertTrue( Grafo_Proprietario.saoContiguos(terrenos.get(3), terrenos.get(121)));
+        assertTrue( Grafo_Proprietario.saoContiguos(terrenos.get(127), terrenos.get(3)));
+        assertTrue( Grafo_Proprietario.saoContiguos(terrenos.get(121), terrenos.get(127)));
+        int numVizinhos = TrocaTerrenos.calcularVizinhos(terrenosOwner1);
+
+        // Verifica se o número de vizinhos foi calculado corretamente.
+        assertEquals(3, numVizinhos);
     }
 }
