@@ -101,12 +101,10 @@ public class Main {
 
         btnPropriedades.addActionListener(e -> {
             Graph.CreateGraph(terrenos);
-//            JOptionPane.showMessageDialog(dialog, "Função de propriedades chamada!");
         });
 
         btnProprietarios.addActionListener(e -> {
             Grafo_Proprietario.construirGrafo(terrenos);
-//            JOptionPane.showMessageDialog(dialog, "Função de proprietários chamada!");
         });
 
         dialog.setVisible(true);
