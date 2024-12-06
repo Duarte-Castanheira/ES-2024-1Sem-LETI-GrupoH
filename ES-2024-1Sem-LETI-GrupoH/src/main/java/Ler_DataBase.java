@@ -2,6 +2,8 @@ import com.opencsv.CSVReaderHeaderAware;
 import com.opencsv.exceptions.CsvValidationException;
 import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.io.WKTReader;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
@@ -11,7 +13,7 @@ import java.util.Map;
 public class Ler_DataBase {
     private static final WKTReader reader = new WKTReader();
 
-    public static Map<Integer, Terreno> ReadFile(String caminhoArquivo ) {
+    public static Map<Integer, Terreno> ReadFile(File caminhoArquivo ) {
 
         Map<Integer, Terreno> mapaTerrenos = new HashMap<>();
         try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(caminhoArquivo))) {

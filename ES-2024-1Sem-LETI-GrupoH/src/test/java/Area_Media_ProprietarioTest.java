@@ -1,3 +1,4 @@
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -5,16 +6,24 @@ import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * Classe de teste para verificar a funcionalidade da classe Area_Media_Proprietario.
+ */
+
 class Area_Media_ProprietarioTest {
 
-    private static List<Terreno> terrenos;
-    private Area_Media areaMedia;
+    private static Map<Integer, Terreno> terrenos;
+    private Area_Media_Proprietario areaMedia;
+
+    /**
+     * Método executado antes de todos os testes.
+     * Inicializa o mapa de terrenos com dados simulados.
+     */
 
     @BeforeAll
     static void beforeAll() {
@@ -29,33 +38,53 @@ class Area_Media_ProprietarioTest {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        terrenos = Arrays.asList(
-                new Terreno(1, "7343148.0" ,"2,99624E+12", 57.2469341921808, 202.05981432070362, g1, 93, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)" ),
-                new Terreno(3, "7344925.0", "2,98623E+12", 39.69344896337617, 87.83290987170697, g2, 26, "Arco da Calheta","Calheta","Ilha da Madeira (Madeira" ),
-                new Terreno (11, "17607847.0", "2,98622E+12", 163.02830777164647, 907.0567667929143, g3, 26, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)")
-        );
+        terrenos = new HashMap<>();
+        terrenos.put(1,new Terreno(1, "7343148.0", "2,99624E+12", 57.2469341921808, 202.05981432070362, g1, 93, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
+        terrenos.put(3,new Terreno(3, "7344925.0", "2,98623E+12", 39.69344896337617, 87.83290987170697, g2, 26, "Arco da Calheta","Calheta","Ilha da Madeira (Madeira" ));
+        terrenos.put(11,new Terreno (11, "17607847.0", "2,98622E+12", 163.02830777164647, 907.0567667929143, g3, 26, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)"));
     }
+
+    /**
+     * Método executado antes de cada teste individual.
+     * Inicializa a instância da classe a ser testada.
+     */
+
 
     @BeforeEach
     void setUp() {
-        areaMedia = new Area_Media(terrenos);
+        areaMedia = new Area_Media_Proprietario(terrenos);
     }
 
-    @Test
-    void areaFreguesia(){
-        double areaFreguesia = areaMedia.calcularAreaMedia("Freguesia", "Arco da Calheta");
-        assertEquals(398.98, areaFreguesia, 0.01);
-    }
+    /**
+     * Testa o cálculo da área média por proprietário em uma freguesia.
+     * Verifica se o valor calculado é aproximadamente igual ao esperado (598.47).
+     */
 
     @Test
-    void areaMunicipio(){
-        double areaMunicipio = areaMedia.calcularAreaMedia("Município", "Calheta");
-        assertEquals(398.98, areaMunicipio, 0.01);
+    void area_Freguesia(){
+        double area_Freguesia = areaMedia.calcular_AreaMedia("Freguesia", "Arco da Calheta");
+        assertEquals(598.47, area_Freguesia, 0.01);
     }
 
+    /**
+     * Testa o cálculo da área média por proprietário em um município.
+     * Verifica se o valor calculado é aproximadamente igual ao esperado (598.47).
+     */
+
     @Test
-    void areaIlha(){
-        double areaIlha = areaMedia.calcularAreaMedia("Ilha", "Ilha da Madeira (Madeira)");
-        assertEquals(554.55, areaIlha, 0.01);
+    void area_Municipio(){
+        double area_Municipio = areaMedia.calcular_AreaMedia("Municipio", "Calheta");
+        assertEquals(598.47, area_Municipio, 0.01);
+    }
+
+    /**
+     * Teste que verifica o cálculo da área média por ilha.
+     * Verifica se a área média da ilha "Ilha da Madeira (Madeira)" é 1676.77.
+     */
+
+    @Test
+    void area_Ilha(){
+        double area_Ilha = areaMedia.calcular_AreaMedia("Ilha", "Ilha da Madeira (Madeira)");
+        assertEquals(554.55, area_Ilha, 0.01);
     }
 }

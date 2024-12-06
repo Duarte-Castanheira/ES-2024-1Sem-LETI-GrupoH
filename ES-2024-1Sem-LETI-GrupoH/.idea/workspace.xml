@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classes alteradas de lista para MAP">
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Updated project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="main_Duarte" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -45,8 +50,15 @@
     &quot;accountId&quot;: &quot;6f4476fd-97f8-40c0-80ce-30a2999fa7de&quot;
   }
 }</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -58,10 +70,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "JUnit.All in ES-2024-1Sem-LETI-GrupoH.executor": "Run",
+    "JUnit.Area_MediaTest.areaFreguesia.executor": "Run",
     "JUnit.Area_MediaTest.executor": "Run",
-    "JUnit.Area_Media_ProprietarioTest.executor": "Coverage",
+    "JUnit.Area_Media_ProprietarioTest.area_Municipio.executor": "Run",
+    "JUnit.Area_Media_ProprietarioTest.executor": "Run",
     "JUnit.GraphTest.executor": "Run",
     "JUnit.GraphTest.testCreateGraph.executor": "Run",
     "JUnit.GraphTest.testEmptyGraph.executor": "Run",
@@ -69,23 +84,49 @@
     "JUnit.Ler_DataBaseTest.ReadFile.executor": "Run",
     "JUnit.Ler_DataBaseTest.executor": "Run",
     "JUnit.TerrenoTest.executor": "Coverage",
+    "JUnit.TrocaTerrenosTest.executor": "Run",
+    "JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo.executor": "Run",
+    "JUnit.java in ES-2024-1Sem-LETI-GrupoH.executor": "Run",
     "Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor": "Run",
     "Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main__Duarte",
+    "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/duart/TicTacToeFX",
+    "last_opened_file_path": "C:/Users/duart/Desktop/Engenharia_Software/Projeto/teste",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50689656",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output1\qodana.sarif.json" />
+        <option name="reportGuid" value="d9381961-3f7f-417e-b0be-2cb77a040d4d" />
+        <option name="reportName" value="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output1\qodana.sarif.json" reportGuid="d9381961-3f7f-417e-b0be-2cb77a040d4d" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+      <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="f5d4b434-df46-4da5-a7c2-64f9a513b8ad" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -94,13 +135,18 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\duart\Desktop\Engenharia_Software\Projeto\ES-2024-1Sem-LETI-GrupoH\demo\src" />
+      <recent name="C:\Users\duart\Desktop\Engenharia_Software\Projeto\ES-2024-1Sem-LETI-GrupoH\demo" />
       <recent name="C:\Users\duart\Desktop\Engenharia_Software\Projeto\ES-2024-1Sem-LETI-GrupoH" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Area_Media_ProprietarioTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ES-2024-1Sem-LETI-GrupoH" />
@@ -108,29 +154,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Area_MediaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Area_MediaTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Area_Media_ProprietarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Area_Media_ProprietarioTest.area_Municipio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Area_Media_ProprietarioTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="area_Municipio" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,13 +173,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TrocaTerrenosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrocaTerrenosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ES-2024-1Sem-LETI-GrupoH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrocaTerrenosTest" />
+      <option name="METHOD_NAME" value="testGerarSugestoesDeTroca_impactoPositivo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Area_Media_ProprietarioTest" />
-        <item itemvalue="JUnit.Area_MediaTest" />
-        <item itemvalue="JUnit.GraphTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TrocaTerrenosTest" />
         <item itemvalue="JUnit.Ler_DataBaseTest" />
+        <item itemvalue="JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" />
+        <item itemvalue="JUnit.Area_Media_ProprietarioTest.area_Municipio" />
       </list>
     </recent_temporary>
   </component>
@@ -203,6 +251,18 @@
       <workItem from="1733155177721" duration="4225000" />
       <workItem from="1733161082565" duration="7028000" />
       <workItem from="1733179337011" duration="3991000" />
+      <workItem from="1733231315916" duration="4446000" />
+      <workItem from="1733242638949" duration="2146000" />
+      <workItem from="1733390290738" duration="1751000" />
+      <workItem from="1733394017843" duration="1155000" />
+      <workItem from="1733395896676" duration="616000" />
+      <workItem from="1733397295258" duration="654000" />
+      <workItem from="1733398021264" duration="1069000" />
+      <workItem from="1733399116944" duration="340000" />
+      <workItem from="1733399712725" duration="916000" />
+      <workItem from="1733400771432" duration="2664000" />
+      <workItem from="1733404772800" duration="8064000" />
+      <workItem from="1733481927483" duration="20812000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -268,7 +328,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733167313614</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated project">
+      <option name="closed" value="true" />
+      <created>1733483651607</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733483651607</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated project">
+      <option name="closed" value="true" />
+      <created>1733497657091</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733497657091</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +373,9 @@
     <MESSAGE value="Classe para representar em forma de grafo o cadastro das propriedades e a respetiva classe teste" />
     <MESSAGE value="Removida a classe Geometry e adicionada dependencia para os multipolygons" />
     <MESSAGE value="Classes alteradas de lista para MAP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classes alteradas de lista para MAP" />
+    <MESSAGE value="updated project" />
+    <MESSAGE value="Updated project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -321,8 +399,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_MediaTest.ic" NAME="Area_MediaTest Coverage Results" MODIFIED="1733070004390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TrocaTerrenosTest_testGerarSugestoesDeTroca_impactoPositivo.ic" NAME="TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo Coverage Results" MODIFIED="1733497264515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TerrenoTest.ic" NAME="TerrenoTest Coverage Results" MODIFIED="1733069989037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Ler_DataBaseTest.ic" NAME="Ler_DataBaseTest Coverage Results" MODIFIED="1733070063427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$java_in_ES_2024_1Sem_LETI_GrupoH.ic" NAME="java in ES-2024-1Sem-LETI-GrupoH Coverage Results" MODIFIED="1733489010672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Main.ic" NAME="Main Coverage Results" MODIFIED="1732628762609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest_testCreateGraph.ic" NAME="GraphTest.testCreateGraph Coverage Results" MODIFIED="1732990490706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_Media_ProprietarioTest.ic" NAME="Area_Media_ProprietarioTest Coverage Results" MODIFIED="1733070018036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

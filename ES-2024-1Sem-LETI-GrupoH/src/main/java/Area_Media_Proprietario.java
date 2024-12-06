@@ -1,51 +1,57 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Area_Media_Proprietario {
 
-    private final List<Terreno> terrenos;
+    private static Map<Integer,Terreno> terreno;
 
-    public Area_Media_Proprietario(List<Terreno> terrenos) {
-        this.terrenos = terrenos;
+    public Area_Media_Proprietario(Map<Integer,Terreno> terreno) {
+        this.terreno = terreno;
     }
 
-    public double calcularAreaMedia(String areaGeografica, String nome) {
-        List<Terreno> terrenoEscolhidos = new ArrayList();
+    public static double calcular_AreaMedia(String areaGeografica, String nome) {
+        Map<Integer, Terreno> terrenosEscolhidos = new HashMap<>();
 
-        for (Terreno t : terrenos) {
-            if (areaGeografica.equalsIgnoreCase("Freguesia") && t.getFreguesia().equalsIgnoreCase(nome)) {
-                terrenoEscolhidos.add(t);
-            } else if (areaGeografica.equalsIgnoreCase("Município") && t.getMunicipio().equalsIgnoreCase(nome)) {
-                terrenoEscolhidos.add(t);
-            } else if (areaGeografica.equalsIgnoreCase("Ilha") && t.getIlha().equalsIgnoreCase(nome)) {
-                terrenoEscolhidos.add(t);
+        for (Map.Entry<Integer,Terreno> entry : terreno.entrySet()) {
+            Terreno currentTerreno = entry.getValue();
+            boolean shouldAdd = false;
+
+            switch (areaGeografica.toLowerCase()) {
+                case "freguesia":
+                    shouldAdd = currentTerreno.getFreguesia().equalsIgnoreCase(nome);
+                    break;
+                case "municipio":
+                    shouldAdd = currentTerreno.getMunicipio().equalsIgnoreCase(nome);
+                    break;
+                case "ilha":
+                    shouldAdd = currentTerreno.getIlha().equalsIgnoreCase(nome);
+                    break;
+                default:
+                    // Caso deseje lidar com uma área geográfica não reconhecida
+                    System.err.println("Área geográfica desconhecida: " + areaGeografica);
+                    break;
+            }
+            if (shouldAdd) {
+                terrenosEscolhidos.put(currentTerreno.getOBJECTID(), currentTerreno);
+            }
+            if (terrenosEscolhidos.isEmpty()) {
+                return -1;
             }
         }
 
-        if (terrenoEscolhidos.isEmpty()) {
-            return -1;
-        }
+        Map<Integer, Double> areasAgrupadasPorProprietario = new HashMap<>();
 
-        List<Integer> proprietarios = new ArrayList();
-        List<Double> areasAgrupadas = new ArrayList();
-
-        for (Terreno terreno : terrenoEscolhidos) {
+        for (Terreno terreno : terrenosEscolhidos.values()) {
             int proprietario = terreno.getOWNER();
-            if (!proprietarios.contains(proprietario)) {
-                double somaArea = 0;
-                for (Terreno t : terrenoEscolhidos) {
-                    if (proprietario == t.getOWNER()) {
-                        somaArea += t.getShape_Area();
-                    }
-                }
-                proprietarios.add(proprietario);
-                areasAgrupadas.add(somaArea);
-            }
+            areasAgrupadasPorProprietario.put(proprietario, areasAgrupadasPorProprietario.getOrDefault(proprietario, 0.0) + terreno.getShape_Area());
         }
-        double somaArea = 0;
-        for (double area : areasAgrupadas) {
+        double somaArea = 0.0;
+        for (double area : areasAgrupadasPorProprietario.values()) {
             somaArea += area;
         }
-        return somaArea / areasAgrupadas.size();
+
+        return somaArea / areasAgrupadasPorProprietario.size();
     }
 }
