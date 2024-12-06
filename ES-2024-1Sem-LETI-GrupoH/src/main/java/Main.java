@@ -1,10 +1,5 @@
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultUndirectedGraph;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,7 +37,7 @@ public class Main {
         frame.add(btnSugestoes);
 
         // Adicionar ação ao botão "Carregar Ficheiro"
-        btnCarregar.addActionListener(e -> carregarFicheiro());
+        btnCarregar.addActionListener(e -> carregarFicheiro(btnGrafos,btnAreas,btnSugestoes));
 
         // Adicionar ação ao botão "Grafos"
         btnGrafos.addActionListener(e -> mostrarOpcoesGrafos(frame));
@@ -123,7 +118,7 @@ public class Main {
      */
 
     static void mostrarOpcoesAreas(JFrame frame) {
-  
+
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
         dialog.setSize(200, 200);
         dialog.setLayout(new FlowLayout());
@@ -140,7 +135,7 @@ public class Main {
         dialog.setVisible(true);
     }
 
-  
+
     /**
      * Mostra sub-opções para cálculo de áreas médias com base em critérios específicos.
      */
@@ -177,13 +172,13 @@ public class Main {
         } else if (palavra != null && !palavra.isEmpty()) {
             switch (mensagem.toLowerCase()) {
                 case "freguesia":
-                    result = areaMedia.calcularAreaMedia_Freguesia(palavra);
+                    result = Area_Media.calcularAreaMedia_Freguesia(palavra);
                     break;
                 case "municipio":
-                    result = areaMedia.calcularAreaMedia_Municipio(palavra);
+                    result = Area_Media.calcularAreaMedia_Municipio(palavra);
                     break;
                 case "ilha":
-                    result = areaMedia.calcularAreaMedia_Ilha(palavra);
+                    result = Area_Media.calcularAreaMedia_Ilha(palavra);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida: " + mensagem);
