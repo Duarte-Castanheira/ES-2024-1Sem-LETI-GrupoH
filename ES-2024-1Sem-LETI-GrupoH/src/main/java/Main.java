@@ -36,6 +36,10 @@ public class Main {
         frame.add(btnAreas);
         frame.add(btnSugestoes);
 
+        btnGrafos.setEnabled(false);
+        btnAreas.setEnabled(false);
+        btnSugestoes.setEnabled(false);
+
         // Adicionar ação ao botão "Carregar Ficheiro"
         btnCarregar.addActionListener(e -> carregarFicheiro(btnGrafos,btnAreas,btnSugestoes));
 

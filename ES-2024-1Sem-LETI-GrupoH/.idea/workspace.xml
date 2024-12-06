@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno. Alguns testes iniciados">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Projeto praticamente acabado com comentários e a main bem">
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731364106151</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Projeto praticamente acabado com comentários e bem">
+      <option name="closed" value="true" />
+      <created>1733523625042</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733523625042</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Projeto praticamente acabado com comentários e a main bem">
+      <option name="closed" value="true" />
+      <created>1733523650597</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733523650597</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +218,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno" />
     <MESSAGE value="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno. Alguns testes iniciados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno. Alguns testes iniciados" />
+    <MESSAGE value="Projeto praticamente acabado com comentários e bem" />
+    <MESSAGE value="Projeto praticamente acabado com comentários e a main bem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projeto praticamente acabado com comentários e a main bem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
