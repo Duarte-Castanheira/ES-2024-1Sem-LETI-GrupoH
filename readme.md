@@ -6,5 +6,6 @@ Margarida Jesus nº110758, username - Margarida-Jesus
 
 Identificação e descrição de erros e funcionalidades não implementadas:
 
-Os grafos demoram algum tempo a aparecer.
-O exercicio 6 não está totalmente bem implementado.
+Os grafos demoram algum tempo a ser gerados.
+
+
