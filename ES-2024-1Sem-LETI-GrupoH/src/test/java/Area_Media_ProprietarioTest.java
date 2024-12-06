@@ -51,7 +51,8 @@ class Area_Media_ProprietarioTest {
 
     @BeforeEach
     void setUp() {
-        areaMedia = new Area_Media_Proprietario(terrenos);
+
+        Area_Media_Proprietario.setTerreno(terrenos);
     }
 
     /**
@@ -61,7 +62,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Freguesia(){
-        double area_Freguesia = areaMedia.obterTerrenos("Freguesia", "Arco da Calheta");
+        double area_Freguesia = Area_Media_Proprietario.obterTerrenos("Freguesia", "Arco da Calheta");
         assertEquals(598.47, area_Freguesia, 0.01);
     }
 
@@ -72,7 +73,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Municipio(){
-        double area_Municipio = areaMedia.obterTerrenos("Municipio", "Calheta");
+        double area_Municipio = Area_Media_Proprietario.obterTerrenos("Municipio", "Calheta");
         assertEquals(598.47, area_Municipio, 0.01);
     }
 
@@ -83,7 +84,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Ilha(){
-        double area_Ilha = areaMedia.obterTerrenos("Ilha", "Ilha da Madeira (Madeira)");
+        double area_Ilha = Area_Media_Proprietario.obterTerrenos("Ilha", "Ilha da Madeira (Madeira)");
         assertEquals(554.55, area_Ilha, 0.01);
     }
 }

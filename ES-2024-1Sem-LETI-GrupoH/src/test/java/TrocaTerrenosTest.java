@@ -87,22 +87,6 @@ class TrocaTerrenosTest {
 
         // Verificar se o Map retornado não é nulo nem vazio
         assertNotNull(trocas, "O Map de sugestões de troca não deve ser nulo.");
-
-        // Map para armazenar sugestões com impacto negativo ou nulo
-        Map<Integer, TrocaTerrenos.Troca> impactosNegativos = new HashMap<>();
-
-        // Iterar sobre as sugestões de troca
-        for (Map.Entry<Integer, TrocaTerrenos.Troca> entry : trocas.entrySet()) {
-            Integer id = entry.getKey();
-            TrocaTerrenos.Troca troca = entry.getValue();
-
-            // Validar se a troca possui impacto positivo
-            if (troca == null) {
-                impactosNegativos.put(id, troca);
-            }
-        }
-        // Verificar se há impactos negativos
-        assertNotNull(impactosNegativos);
     }
 
     /**

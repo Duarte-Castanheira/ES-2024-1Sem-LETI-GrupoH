@@ -17,8 +17,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Area_MediaTest {
 
-    private Area_Media area;
-
     /**
      * Método que é executado antes de cada teste.
      * Inicializa os dados de teste com terrenos predefinidos.
@@ -43,7 +41,7 @@ class Area_MediaTest {
         terrenos.put(6004,new Terreno(6004, "7309459.0", "3,16614E+12", 340.13373978055176, 4676.4979913805455, g3, 153, "Câmara de Lobos", "Câmara de Lobos", "Ilha da Madeira (Madeira)"));
 
 
-        area = new Area_Media(terrenos);
+        Area_Media.setTerreno(terrenos);
     }
 
     /**
@@ -53,7 +51,7 @@ class Area_MediaTest {
 
     @AfterEach
     void tearDown() {
-        area = null;
+         Area_Media.setTerreno(null);
     }
 
     /**
@@ -63,7 +61,7 @@ class Area_MediaTest {
 
     @Test
     void areaFreguesia(){
-        double areaMedia = area.calcularAreaMedia_Freguesia("Arco da Calheta");
+        double areaMedia = Area_Media.calcularAreaMedia_Freguesia("Arco da Calheta");
         assertEquals(176.91, areaMedia, 0.01);
     }
 
@@ -74,7 +72,7 @@ class Area_MediaTest {
 
     @Test
     void areaMunicipio(){
-        double areaMedia = area.calcularAreaMedia_Municipio("Calheta");
+        double areaMedia = Area_Media.calcularAreaMedia_Municipio("Calheta");
         assertEquals(176.91, areaMedia, 0.01);
     }
 
@@ -85,7 +83,7 @@ class Area_MediaTest {
 
     @Test
     void areaIlha(){
-        double areaMedia = area.calcularAreaMedia_Ilha("Ilha da Madeira (Madeira)");
+        double areaMedia = Area_Media.calcularAreaMedia_Ilha("Ilha da Madeira (Madeira)");
         assertEquals(1676.77, areaMedia, 0.01);
     }
 }

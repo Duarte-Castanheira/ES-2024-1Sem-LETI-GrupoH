@@ -75,8 +75,8 @@ public class Main {
 
 
             terrenos = Ler_DataBase.ReadFile(file);
-            new Area_Media(terrenos);
-            new Area_Media_Proprietario(terrenos);
+            Area_Media.setTerreno(terrenos);
+            Area_Media_Proprietario.setTerreno(terrenos);
 
             // Ativar os botões após o carregamento do ficheiro
             btnGrafos.setEnabled(true);
@@ -211,7 +211,7 @@ public class Main {
                 return;
             }
             int numero2 = Integer.parseInt(input2);
-            Map<Integer, TrocaTerrenos.Troca> trocas = new HashMap<>();
+            Map<Integer, TrocaTerrenos.Troca> trocas;
             trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,numero1,numero2);
             System.out.println(trocas);
             JOptionPane.showMessageDialog(null, "Resultado da sugestão: " + trocas);

@@ -19,7 +19,12 @@ public class Area_Media_Proprietario {
      * @param terreno Mapa de terrenos a ser utilizado nos cálculos.
      */
     public Area_Media_Proprietario(Map<Integer, Terreno> terreno) {
-        this.terreno = terreno;
+        Area_Media_Proprietario.terreno = terreno;
+    }
+
+
+    public static void setTerreno(Map<Integer, Terreno> terreno) {
+        Area_Media_Proprietario.terreno = terreno;
     }
 
     /**

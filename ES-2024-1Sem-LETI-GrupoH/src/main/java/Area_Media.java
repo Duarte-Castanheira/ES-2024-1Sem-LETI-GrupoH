@@ -17,7 +17,11 @@ public class Area_Media {
      */
 
     public Area_Media(Map<Integer, Terreno> terreno) {
-        this.terreno = terreno;
+        Area_Media.terreno = terreno;
+    }
+
+    public static void setTerreno(Map<Integer, Terreno> terreno) {
+        Area_Media.terreno = terreno;
     }
 
     /**
