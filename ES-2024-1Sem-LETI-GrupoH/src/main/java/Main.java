@@ -9,10 +9,19 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe principal que gerencia a interface gráfica da aplicação.
+ * Permite ao usuário interagir com funcionalidades como carregar ficheiros, visualizar grafos, calcular áreas médias, e sugerir trocas.
+ */
+
 public class Main {
+
+    /**
+     * Mapa para armazenar os terrenos carregados do ficheiro.
+     */
+
     private static Map<Integer,Terreno> terrenos = new HashMap<>();
-    private static Area_Media areaMedia;
-    private static Area_Media_Proprietario areaMedia_proprietario;
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Interface Gráfica");
@@ -48,17 +57,16 @@ public class Main {
         frame.setVisible(true);
     }
 
-    // Método chamado ao clicar em "Carregar Ficheiro"
-    private static void carregarFicheiro() {
 
+    /**
+     * Método para carregar um ficheiro CSV contendo os dados dos terrenos.
+     * Ativa os botões dependentes após o carregamento bem-sucedido.
+     */
+
+    private static void carregarFicheiro(JButton btnGrafos, JButton btnAreas, JButton btnSugestoes) {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Abrir ficheiro");
 
-        fileChooser.setAcceptAllFileFilterUsed(false);
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Ficheiro de Texto","txt"));
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Imagens ","png", "jpg", "gif"));
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Áudio","wav", "mp3", "aac"));
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Todos os ficheiros" ,"*"));
 
         int returnVal = fileChooser.showOpenDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -67,17 +75,25 @@ public class Main {
             JOptionPane.showMessageDialog(null, "Ficheiro Selecionado: " + file.getAbsolutePath());
 
 
-            terrenos = Ler_DataBase.ReadFile("Madeira-Moodle-1.1.csv");
-            areaMedia = new Area_Media(terrenos);
-            areaMedia_proprietario = new Area_Media_Proprietario(terrenos);
-        }else {
-            JOptionPane.showMessageDialog(null, "Função para carregar ficheiro chamada!");
-        // Implementar a funcionalidade de carregar ficheiro aqui
+            terrenos = Ler_DataBase.ReadFile(file);
+            new Area_Media(terrenos);
+            new Area_Media_Proprietario(terrenos);
+
+            // Ativar os botões após o carregamento do ficheiro
+            btnGrafos.setEnabled(true);
+            btnAreas.setEnabled(true);
+            btnSugestoes.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum ficheiro foi selecionado.");
         }
     }
 
-    // Método para mostrar opções de grafos
-    private static void mostrarOpcoesGrafos(JFrame frame) {
+    /**
+     * Mostra opções relacionadas aos grafos em uma janela de diálogo.
+     */
+
+    static void mostrarOpcoesGrafos(JFrame frame) {
+
         JDialog dialog = new JDialog(frame, "Opções de Grafos", true);
         dialog.setSize(200, 150);
         dialog.setLayout(new FlowLayout());
@@ -101,8 +117,13 @@ public class Main {
         dialog.setVisible(true);
     }
 
-    // Método para mostrar opções de áreas
-    private static void mostrarOpcoesAreas(JFrame frame) {
+
+    /**
+     * Mostra opções relacionadas ao cálculo de áreas médias em uma janela de diálogo.
+     */
+
+    static void mostrarOpcoesAreas(JFrame frame) {
+  
         JDialog dialog = new JDialog(frame, "Opções de Áreas médias", true);
         dialog.setSize(200, 200);
         dialog.setLayout(new FlowLayout());
@@ -119,7 +140,11 @@ public class Main {
         dialog.setVisible(true);
     }
 
-    // Método para mostrar subopções para cada opção de áreas
+  
+    /**
+     * Mostra sub-opções para cálculo de áreas médias com base em critérios específicos.
+     */
+
     private static void mostrarSubOpcoes(int i, String opcao) {
         JDialog dialog = new JDialog((Frame) null, "Opções de " + opcao, true);
         dialog.setSize(250, 200);
@@ -140,12 +165,15 @@ public class Main {
         dialog.setVisible(true);
     }
 
-    // Método para pedir uma palavra ao utilizador
+
+    /**
+     * Solicita ao usuário uma entrada para calcular áreas médias com base em uma palavra-chave.
+     */
     private static void pedirPalavra(int i, String mensagem) {
         double result = -1;
         String palavra = JOptionPane.showInputDialog("Insira uma palavra:");
         if(i==2) {
-            result = areaMedia_proprietario.calcular_AreaMedia(mensagem, palavra);
+            result = Area_Media_Proprietario.obterTerrenos(mensagem, palavra);
         } else if (palavra != null && !palavra.isEmpty()) {
             switch (mensagem.toLowerCase()) {
                 case "freguesia":
@@ -159,17 +187,40 @@ public class Main {
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida: " + mensagem);
-                    return; // Sai do método se a opção for inválida
+                    return;
             }
         }
         JOptionPane.showMessageDialog(null, "Área média de " + mensagem + ": " + result);
     }
 
+    /**
+     * Mostra uma funcionalidade de sugestão de troca entre dois terrenos.
+     */
 
-    // Método chamado ao clicar em "Sugestões"
     private static void sugestoes() {
-        JOptionPane.showMessageDialog(null, "Função para sugestões chamada!");
-        // Implementar funcionalidade de sugestões aqui
+        try {
+            // Pedir o primeiro número
+            String input1 = JOptionPane.showInputDialog(null, "Insira o primeiro número:");
+            if (input1 == null || input1.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Operação cancelada ou entrada inválida.");
+                return;
+            }
+            int numero1 = Integer.parseInt(input1);
+
+            // Pedir o segundo número
+            String input2 = JOptionPane.showInputDialog(null, "Insira o segundo número:");
+            if (input2 == null || input2.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Operação cancelada ou entrada inválida.");
+                return;
+            }
+            int numero2 = Integer.parseInt(input2);
+            Map<Integer, TrocaTerrenos.Troca> trocas = new HashMap<>();
+            trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,numero1,numero2);
+            System.out.println(trocas);
+            JOptionPane.showMessageDialog(null, "Resultado da sugestão: " + trocas);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, insira apenas números válidos.");
+        }
     }
 
 

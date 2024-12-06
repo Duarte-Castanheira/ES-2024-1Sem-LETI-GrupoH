@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -62,7 +61,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Freguesia(){
-        double area_Freguesia = areaMedia.calcular_AreaMedia("Freguesia", "Arco da Calheta");
+        double area_Freguesia = areaMedia.obterTerrenos("Freguesia", "Arco da Calheta");
         assertEquals(598.47, area_Freguesia, 0.01);
     }
 
@@ -73,7 +72,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Municipio(){
-        double area_Municipio = areaMedia.calcular_AreaMedia("Municipio", "Calheta");
+        double area_Municipio = areaMedia.obterTerrenos("Municipio", "Calheta");
         assertEquals(598.47, area_Municipio, 0.01);
     }
 
@@ -84,7 +83,7 @@ class Area_Media_ProprietarioTest {
 
     @Test
     void area_Ilha(){
-        double area_Ilha = areaMedia.calcular_AreaMedia("Ilha", "Ilha da Madeira (Madeira)");
+        double area_Ilha = areaMedia.obterTerrenos("Ilha", "Ilha da Madeira (Madeira)");
         assertEquals(554.55, area_Ilha, 0.01);
     }
 }

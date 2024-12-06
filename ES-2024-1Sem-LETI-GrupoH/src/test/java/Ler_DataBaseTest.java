@@ -50,11 +50,6 @@ class Ler_DataBaseTest {
             assertTrue(true);
         } catch (Exception e) {
             fail("O método ReadFile lançou uma exceção: " + e.getMessage());
-        } finally {
-            File ficheiro = new File("test-temp.csv");
-            if (ficheiro.exists()) {
-                ficheiro.delete();
-            }
         }
     }
 

@@ -17,7 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 class GraphTest {
-    private Map<Integer,Terreno> terrenos;
+    private Map<Integer, Terreno> terrenos;
+
+    /**
+     * Método para configurar o estado inicial antes de cada teste
+     */
 
     /**
      * Método para configurar o estado inicial antes de cada teste
@@ -39,12 +43,12 @@ class GraphTest {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        Terreno terreno1 = new Terreno(1,"7343148.0","2,99624E+12",57.2469341921808,202.05981432070362, g1,93,"Arco da Calheta","Calheta", "Ilha da Madeira (Madeira)");
-        Terreno terreno2 = new Terreno(2,"7344660.0", "2,99622E+12",55.63800662596267, 151.76387471712783, g2, 68, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
-        Terreno terreno3 = new Terreno(1944,"7349717.0","2,97621E+12", 202.08044612398064, 1815.5472539299403, g3,24,"Calheta","Calheta", "Ilha da Madeira (Madeira)");
-        terrenos.put(terreno1.getOBJECTID(),terreno1);
-        terrenos.put(terreno2.getOBJECTID(),terreno2);
-        terrenos.put(terreno3.getOBJECTID(),terreno3);
+        Terreno terreno1 = new Terreno(1, "7343148.0", "2,99624E+12", 57.2469341921808, 202.05981432070362, g1, 93, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
+        Terreno terreno2 = new Terreno(2, "7344660.0", "2,99622E+12", 55.63800662596267, 151.76387471712783, g2, 68, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
+        Terreno terreno3 = new Terreno(1944, "7349717.0", "2,97621E+12", 202.08044612398064, 1815.5472539299403, g3, 24, "Calheta", "Calheta", "Ilha da Madeira (Madeira)");
+        terrenos.put(terreno1.getOBJECTID(), terreno1);
+        terrenos.put(terreno2.getOBJECTID(), terreno2);
+        terrenos.put(terreno3.getOBJECTID(), terreno3);
     }
 
     /**

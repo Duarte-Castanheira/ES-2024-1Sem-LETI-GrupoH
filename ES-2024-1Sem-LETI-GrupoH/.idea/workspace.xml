@@ -7,14 +7,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Updated project">
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Projeto quase acabado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Grafo_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grafo_Proprietario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ler_DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Terreno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Terreno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrocaTerrenos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Grafo_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Grafo_ProprietarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Ler_DataBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TerrenoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main_Duarte" />
+        <entry key="$PROJECT_DIR$/.." value="main_Afonso" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -58,7 +66,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -83,10 +91,18 @@
     "JUnit.GraphTest.testgenerateGraph.executor": "Run",
     "JUnit.Ler_DataBaseTest.ReadFile.executor": "Run",
     "JUnit.Ler_DataBaseTest.executor": "Run",
+    "JUnit.MainTest.executor": "Run",
+    "JUnit.MainTest.testCalculoAreaMediaFreguesia.executor": "Run",
+    "JUnit.MainTest.testCalculoAreaMediaMunicipio.executor": "Run",
+    "JUnit.MainTest.testCarregarFicheiro.executor": "Run",
+    "JUnit.MainTest.testCriacaoGrafo.executor": "Run",
+    "JUnit.MainTest.testDialogosIniciais.executor": "Run",
+    "JUnit.MainTest.testGerarSugestoesTroca.executor": "Run",
     "JUnit.TerrenoTest.executor": "Coverage",
+    "JUnit.TrocaTerrenosTest.calcularVizinhos.executor": "Run",
     "JUnit.TrocaTerrenosTest.executor": "Run",
     "JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo.executor": "Run",
-    "JUnit.java in ES-2024-1Sem-LETI-GrupoH.executor": "Run",
+    "JUnit.java in ES-2024-1Sem-LETI-GrupoH.executor": "Coverage",
     "Maven.ES-2024-1Sem-LETI-GrupoH [clean].executor": "Run",
     "Maven.ES-2024-1Sem-LETI-GrupoH [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -105,15 +121,15 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.50689656",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="QodanaHighlightedReportService">
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output1\qodana.sarif.json" />
-        <option name="reportGuid" value="d9381961-3f7f-417e-b0be-2cb77a040d4d" />
+        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output2\qodana.sarif.json" />
+        <option name="reportGuid" value="d8611270-6b88-478b-9cae-751bfaa7f9dc" />
         <option name="reportName" value="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
       </LocalReportPersistedInfo>
     </option>
@@ -125,6 +141,7 @@
     <option name="descriptions">
       <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output1\qodana.sarif.json" reportGuid="d9381961-3f7f-417e-b0be-2cb77a040d4d" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
       <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="f5d4b434-df46-4da5-a7c2-64f9a513b8ad" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+      <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output2\qodana.sarif.json" reportGuid="d8611270-6b88-478b-9cae-751bfaa7f9dc" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
     </option>
   </component>
   <component name="RecentsManager">
@@ -146,7 +163,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.java in ES-2024-1Sem-LETI-GrupoH">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ES-2024-1Sem-LETI-GrupoH" />
@@ -154,21 +171,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Area_Media_ProprietarioTest.area_Municipio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Area_Media_ProprietarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Area_Media_ProprietarioTest" />
-      <option name="METHOD_NAME" value="area_Municipio" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ler_DataBaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Ler_DataBaseTest.ReadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Ler_DataBaseTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="ReadFile" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,23 +199,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in ES-2024-1Sem-LETI-GrupoH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2024-1Sem-LETI-GrupoH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TrocaTerrenosTest" />
-      <option name="METHOD_NAME" value="testGerarSugestoesDeTroca_impactoPositivo" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.java in ES-2024-1Sem-LETI-GrupoH" />
         <item itemvalue="JUnit.TrocaTerrenosTest" />
-        <item itemvalue="JUnit.Ler_DataBaseTest" />
-        <item itemvalue="JUnit.TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo" />
-        <item itemvalue="JUnit.Area_Media_ProprietarioTest.area_Municipio" />
+        <item itemvalue="JUnit.Ler_DataBaseTest.ReadFile" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Area_Media_ProprietarioTest" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +277,7 @@
       <workItem from="1733399712725" duration="916000" />
       <workItem from="1733400771432" duration="2664000" />
       <workItem from="1733404772800" duration="8064000" />
-      <workItem from="1733481927483" duration="20812000" />
+      <workItem from="1733481927483" duration="25126000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Ler_DataBase para ler o ficheiro quase concluida(falta rever) e alterados alguns atributos na classe Terreno">
       <option name="closed" value="true" />
@@ -344,7 +359,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733497657091</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Troca de propriedades acabada">
+      <option name="closed" value="true" />
+      <created>1733505093102</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733505093102</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Troca de propriedades acabada">
+      <option name="closed" value="true" />
+      <created>1733508931335</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733508931335</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Projeto quase acabado">
+      <option name="closed" value="true" />
+      <created>1733509009605</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733509009606</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +414,9 @@
     <MESSAGE value="Classes alteradas de lista para MAP" />
     <MESSAGE value="updated project" />
     <MESSAGE value="Updated project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated project" />
+    <MESSAGE value="Troca de propriedades acabada" />
+    <MESSAGE value="Projeto quase acabado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projeto quase acabado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -397,12 +438,16 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_MediaTest.ic" NAME="Area_MediaTest Coverage Results" MODIFIED="1733070004390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TrocaTerrenosTest_testGerarSugestoesDeTroca_impactoPositivo.ic" NAME="TrocaTerrenosTest.testGerarSugestoesDeTroca_impactoPositivo Coverage Results" MODIFIED="1733497264515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$TerrenoTest.ic" NAME="TerrenoTest Coverage Results" MODIFIED="1733069989037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Ler_DataBaseTest.ic" NAME="Ler_DataBaseTest Coverage Results" MODIFIED="1733070063427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$java_in_ES_2024_1Sem_LETI_GrupoH.ic" NAME="java in ES-2024-1Sem-LETI-GrupoH Coverage Results" MODIFIED="1733489010672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$java_in_ES_2024_1Sem_LETI_GrupoH.ic" NAME="java in ES-2024-1Sem-LETI-GrupoH Coverage Results" MODIFIED="1733521904850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Main.ic" NAME="Main Coverage Results" MODIFIED="1732628762609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$GraphTest_testCreateGraph.ic" NAME="GraphTest.testCreateGraph Coverage Results" MODIFIED="1732990490706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoH$Area_Media_ProprietarioTest.ic" NAME="Area_Media_ProprietarioTest Coverage Results" MODIFIED="1733070018036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

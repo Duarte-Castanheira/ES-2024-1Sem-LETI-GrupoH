@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +22,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class TrocaTerrenosTest {
 
     private Map<Integer, Terreno> terrenos;
-    private WKTReader reader;
 
     MultiPolygon g1;
     MultiPolygon g2;
@@ -114,10 +112,14 @@ class TrocaTerrenosTest {
 
     @Test
     void testGerarSugestoesDeTroca_diferencaMinimaDeArea() {
-        Map<Integer, TrocaTerrenos.Troca > trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,16,14);
+        Map<Integer, TrocaTerrenos.Troca> trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos, 1, 2);
+
         for (TrocaTerrenos.Troca troca : trocas.values()) {
-            double diferenca = Math.abs(troca.terreno1.getShape_Area() - troca.terreno2.getShape_Area());
-            assertTrue(diferenca > 10, "A diferença de áreas entre terrenos trocados deve ser <= 10.");
+            Terreno t1 = terrenos.get(troca.terrenoid1);
+            Terreno t2 = terrenos.get(troca.terrenoid2);
+
+            double diferenca = Math.abs(t1.getShape_Area() - t2.getShape_Area());
+            assertTrue(diferenca <= 10, "A diferença de áreas deve ser <= 10.");
         }
     }
 
@@ -128,9 +130,13 @@ class TrocaTerrenosTest {
 
     @Test
     void testGerarSugestoesDeTroca_trocasEntreProprietarios() {
-        Map<Integer, TrocaTerrenos.Troca > trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,1,16);
+        Map<Integer, TrocaTerrenos.Troca> trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos, 1, 2);
+
         for (TrocaTerrenos.Troca troca : trocas.values()) {
-            assertNotEquals(troca.terreno1.getOWNER(), troca.terreno2.getOWNER(),
+            Terreno t1 = terrenos.get(troca.terrenoid1);
+            Terreno t2 = terrenos.get(troca.terrenoid2);
+
+            assertNotEquals(t1.getOWNER(), t2.getOWNER(),
                     "As trocas devem ocorrer entre diferentes proprietários.");
         }
     }

@@ -81,8 +81,6 @@ class Grafo_ProprietarioTest {
 
     @Test
     void testGenerateGraph() {
-        // Executar a geração do grafo
-        Grafo_Proprietario grafoProprietario = new Grafo_Proprietario(terrenos);
 
         // Não há uma asserção clara, mas se o método não lançar exceções e abrir a janela, ele funciona.
         assertDoesNotThrow(Grafo_Proprietario::generateGraph);
