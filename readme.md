@@ -6,6 +6,7 @@ Margarida Jesus nº110758, username - Margarida-Jesus
 
 Identificação e descrição de erros e funcionalidades não implementadas:
 
-Os grafos demoram algum tempo a ser gerados.
+Foi utilizada a ferramenta de inspeção do código "Qodana" onde não se verificaram erros.
+Os grafos demoram muito tempo a serem gerados.
 
 
