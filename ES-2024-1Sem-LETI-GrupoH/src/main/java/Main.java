@@ -218,8 +218,10 @@ public class Main {
             int numero2 = Integer.parseInt(input2);
             Map<Integer, TrocaTerrenos.Troca> trocas;
             trocas = TrocaTerrenos.gerarSugestoesDeTroca(terrenos,numero1,numero2);
-            System.out.println(trocas);
-            JOptionPane.showMessageDialog(null, "Resultado da sugestão: " + trocas);
+            if(trocas.isEmpty())
+                JOptionPane.showMessageDialog(null,"Não existem trocas possiveis entre o proprietário " + numero1 + " e o proprietário " + numero2);
+            else
+                JOptionPane.showMessageDialog(null, "Trocas possiveis entre os proprietários " + numero1 + " e " + numero2 + ":\n" + trocas);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor, insira apenas números válidos.");
         }
