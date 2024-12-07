@@ -24,9 +24,9 @@ public class Area_Media_Proprietario {
 
 
     /**
-     * Define o mapa de terrenos para a classe Area_Media_PProprietario.
+     * Define o mapa de terrenos para a classe Area_Media_Proprietario.
      *
-     * @param terreno um mapa<Integer,Terreno> e representa os terrenos que serão utilizados.
+     * @param terreno um {@code Map} e representa os terrenos que serão utilizados.
      */
 
     public static void setTerreno(Map<Integer, Terreno> terreno) {
@@ -73,6 +73,14 @@ public class Area_Media_Proprietario {
 
         return calcular_Area_Media(terrenosEscolhidos);
     }
+
+
+    /**
+     * Calcula a área média dos terrenos agrupados por proprietário.
+     *
+     * @param terrenos um Map que contem os terrenos a serem processados.
+     * @return a área média dos terrenos agrupados por proprietário.
+     */
 
     public static double calcular_Area_Media(Map<Integer,Terreno> terrenos) {
         Map<Integer, Double> areasAgrupadasPorProprietario = new HashMap<>();

@@ -24,7 +24,18 @@ public class Terreno {
 
 
     /**
-     * Construtor parametrizado que inicializa todos os atributos
+     * Construtor da classe Terreno que inicializa todos os atributos do objeto.
+     *
+     * @param OBJECTID       Identificador único do terreno.
+     * @param PAR_ID         Identificação da parcela do terreno.
+     * @param PAR_NUM        Número da parcela do terreno.
+     * @param Shape_Length   Comprimento do perímetro do terreno.
+     * @param Shape_Area     Área total do terreno.
+     * @param geometry       Objeto de geometria (MultiPolygon) que representa a forma do terreno.
+     * @param OWNER          Identificador do proprietário do terreno.
+     * @param Freguesia      Nome da freguesia onde o terreno está localizado.
+     * @param Municipio      Nome do município onde o terreno está localizado.
+     * @param Ilha           Nome da ilha onde o terreno está localizado.
      */
 
     public Terreno(int OBJECTID, String PAR_ID, String PAR_NUM, double Shape_Length, double Shape_Area,

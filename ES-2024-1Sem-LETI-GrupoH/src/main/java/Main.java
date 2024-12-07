@@ -17,6 +17,11 @@ public class Main {
 
     private static Map<Integer,Terreno> terrenos = new HashMap<>();
 
+    /**
+     * Método principal que inicializa a interface gráfica da aplicação.
+     *
+     * @param args Argumentos da linha de comando (não utilizados neste programa).
+     */
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Interface Gráfica");

@@ -7,10 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Calsses sem erros/warnings no Qodana">
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Calsses sem erros/warnings no Qodana com comentários">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Terreno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Terreno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,9 +85,9 @@
   <component name="QodanaHighlightedReportService">
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output11\qodana.sarif.json" />
-        <option name="reportGuid" value="692b3af8-36cd-4f9e-9e01-6401022f9c5e" />
-        <option name="reportName" value="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+        <option name="path" value="C:\Users\duart\AppData\Local\Temp\qodana_output10\qodana.sarif.json" />
+        <option name="reportGuid" value="e08d0cd4-cf81-4831-b21a-d6ecae500952" />
+        <option name="reportName" value="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-07" />
       </LocalReportPersistedInfo>
     </option>
   </component>
@@ -96,6 +98,7 @@
     <option name="descriptions">
       <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output11\qodana.sarif.json" reportGuid="692b3af8-36cd-4f9e-9e01-6401022f9c5e" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
       <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output9\qodana.sarif.json" reportGuid="c4f0ee1a-a5b3-4af8-925b-2a6b9f0b49f3" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-06" />
+      <ReportDescription localRun="true" path="C:\Users\duart\AppData\Local\Temp\qodana_output10\qodana.sarif.json" reportGuid="e08d0cd4-cf81-4831-b21a-d6ecae500952" reportId="ES-2024-1Sem-LETI-GrupoH/qodana/2024-12-07" />
     </option>
   </component>
   <component name="RecentsManager">
@@ -259,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733528048142</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Calsses sem erros/warnings no Qodana com comentários">
+      <option name="closed" value="true" />
+      <created>1733529627799</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733529627799</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +298,8 @@
     <MESSAGE value="Projeto praticamente acabado com comentários e a main acabada" />
     <MESSAGE value="Classe main melhorada e grafos alterados(tentar fazer zoom)" />
     <MESSAGE value="Calsses sem erros/warnings no Qodana" />
-    <option name="LAST_COMMIT_MESSAGE" value="Calsses sem erros/warnings no Qodana" />
+    <MESSAGE value="Calsses sem erros/warnings no Qodana com comentários" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calsses sem erros/warnings no Qodana com comentários" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
