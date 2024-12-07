@@ -23,6 +23,12 @@ public class Area_Media_Proprietario {
     }
 
 
+    /**
+     * Define o mapa de terrenos para a classe Area_Media_PProprietario.
+     *
+     * @param terreno um mapa<Integer,Terreno> e representa os terrenos que serão utilizados.
+     */
+
     public static void setTerreno(Map<Integer, Terreno> terreno) {
         Area_Media_Proprietario.terreno = terreno;
     }

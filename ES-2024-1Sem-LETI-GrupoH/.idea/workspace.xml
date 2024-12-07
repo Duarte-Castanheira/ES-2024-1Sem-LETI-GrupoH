@@ -2,20 +2,15 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
-    <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Classe main melhorada e grafos alterados(tentar fazer zoom)">
+    <list default="true" id="d81f54e6-f5a9-4f3b-97ed-32dbeb46912b" name="Changes" comment="Calsses sem erros/warnings no Qodana">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Area_Media_Proprietario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_MediaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Area_Media_ProprietarioTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TrocaTerrenosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733526451006</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Calsses sem erros/warnings no Qodana">
+      <option name="closed" value="true" />
+      <created>1733528048142</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733528048142</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +286,8 @@
     <MESSAGE value="Projeto praticamente acabado com comentários e a main bem" />
     <MESSAGE value="Projeto praticamente acabado com comentários e a main acabada" />
     <MESSAGE value="Classe main melhorada e grafos alterados(tentar fazer zoom)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe main melhorada e grafos alterados(tentar fazer zoom)" />
+    <MESSAGE value="Calsses sem erros/warnings no Qodana" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calsses sem erros/warnings no Qodana" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
