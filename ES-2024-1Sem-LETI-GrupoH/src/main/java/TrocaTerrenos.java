@@ -64,15 +64,15 @@ public class TrocaTerrenos {
                 Terreno t1 = entry1.getValue();
                 Terreno t2 = entry2.getValue();
                 if (t1.getOWNER() != t2.getOWNER()) {
-                    Map<Integer,Terreno> troca_teste = terrenosMap;
-                    troca_teste.replace(t1.getOBJECTID(), t1,t2);
-                    double NewArea_Media = Area_Media_Proprietario.calcular_Area_Media(troca_teste);
+                    terrenosMap.replace(t1.getOBJECTID(), t1,t2);
+                    double NewArea_Media = Area_Media_Proprietario.calcular_Area_Media(terrenosMap);
                     double diferenca = NewArea_Media - Area_media;
                     if (diferenca > 10) {
                         int trocaId = Objects.hash(t1.getOBJECTID(), t2.getOBJECTID());
                         trocasPossiveis.put(trocaId, new Troca(t1.getOBJECTID(), t2.getOBJECTID()));
                     }
                 }
+                terrenosMap.replace(t1.getOBJECTID(), t2,t1);
             }
         }
 
